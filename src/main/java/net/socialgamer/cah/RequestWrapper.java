@@ -23,9 +23,8 @@
 
 package net.socialgamer.cah;
 
+import jakarta.servlet.http.HttpServletRequest;
 import net.socialgamer.cah.Constants.AjaxRequest;
-
-import javax.servlet.http.HttpServletRequest;
 
 
 /**

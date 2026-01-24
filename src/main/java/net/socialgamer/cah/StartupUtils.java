@@ -37,8 +37,8 @@ import net.socialgamer.cah.task.UserPingTask;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletContextEvent;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletContextEvent;
 import java.net.URI;
 import java.util.Date;
 import java.util.Properties;

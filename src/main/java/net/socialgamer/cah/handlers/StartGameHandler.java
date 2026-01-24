@@ -33,7 +33,7 @@ import net.socialgamer.cah.data.User;
 import org.hibernate.Session;
 import org.hibernate.exception.JDBCConnectionException;
 
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
