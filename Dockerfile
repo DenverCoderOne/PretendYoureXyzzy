@@ -1,4 +1,4 @@
-FROM maven:3.8-openjdk-11 as builder
+FROM maven:3.8-openjdk-17 AS builder
 
 WORKDIR /build
 COPY ./src ./src
@@ -7,7 +7,7 @@ COPY ./pom.xml ./pom.xml
 
 RUN mvn clean package
 
-FROM tomcat:jdk11-openjdk
+FROM tomcat:jdk17-openjdk
 
 WORKDIR /opt
 COPY --from=builder /build/WebContent ./WebContent
