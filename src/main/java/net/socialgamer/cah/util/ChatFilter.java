@@ -187,9 +187,9 @@ public class ChatFilter {
 
   private Set<String> getShadowbanCharacters() {
     try {
-      return ((ShadowBannedStringProvider) Class
-              .forName(getPropValue("pyx.chat.shadowban_strings_provider",
-                      DEFAULT_SHADOWBAN_PROVIDER)).newInstance()).getShadowBannedStrings();
+      String providerClass = getPropValue("pyx.chat.shadowban_strings_provider", DEFAULT_SHADOWBAN_PROVIDER);
+      if (providerClass == null || providerClass.isBlank()) providerClass = DEFAULT_SHADOWBAN_PROVIDER;
+      return ((ShadowBannedStringProvider) Class.forName(providerClass).newInstance()).getShadowBannedStrings();
     } catch (final InstantiationException | IllegalAccessException | ClassNotFoundException
                    | ClassCastException e) {
       LOG.error(String.format("Unable to load shadowban string provider %s, using empty set.",
@@ -261,6 +261,7 @@ public class ChatFilter {
         case DROP_MESSAGE:
           // handled by #getEvent()
         case OK:
+          return null;
         default:
           LOG.error(String.format("Unknown chat filter result %s", this));
           return null;
