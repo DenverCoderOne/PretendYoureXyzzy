@@ -86,9 +86,9 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
 </head>
 <body id="gamebody">
 
-<button id="lang_toggle" onclick="cah.I18n.toggle()" title="Switch language / החלף שפה">עברית</button>
-
 <div id="welcome">
+  <button class="lang_toggle" onclick="cah.I18n.toggle()" title="Switch language / החלף שפה">עברית</button>
+
   <h1 tabindex="0">
     Pretend You're <dfn
     title="Xyzzy is an Artificial Unintelligence bot. You'll be making more sense than him in this game.">
@@ -148,6 +148,7 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
                    data-i18n-value="btn_view_cards" data-i18n-title="btn_view_cards_title"
                    onclick="window.open('viewcards.jsp', 'viewcards');"/>
             <input type="button" id="logout" value="Log out" data-i18n-value="btn_logout"/>
+            <button class="lang_toggle" onclick="cah.I18n.toggle()" title="Switch language / החלף שפה">עברית</button>
         </div>
     </div>
     <div id="main">

@@ -77,10 +77,10 @@
       filter_neutral:               'Do not require or ban these card sets:',
       filter_only_show:             'Only show games with these card sets:',
       filter_only_show_title:       'Any game that does not use all of these card sets will not be shown in the game list.',
-      btn_remove_right:             'Remove \u2192',
-      btn_ban:                      '\u2190 Ban',
-      btn_require_right:            'Require \u2192',
-      btn_remove_left:              '\u2190 Remove',
+      btn_remove_right:             'Remove →',
+      btn_ban:                      '← Ban',
+      btn_require_right:            'Require →',
+      btn_remove_left:              '← Remove',
 
       /* --- Global chat tab --- */
       btn_chat:                     'Chat',
@@ -103,11 +103,11 @@
       btn_show_last_round:          'Show Last Round',
       btn_hide_game_options:        'Hide Game Options',
       game_animate_cards:           ' Animate Cards',
-      game_waiting:                 'Waiting for server\u2026',
+      game_waiting:                 'Waiting for server…',
       black_card_for:               'The black card for',
       this_round_is:                'this round is',
       white_cards_played:           'The white cards played this round are:',
-      prev_round_won_by:            'The previous round was won by\u00a0',
+      prev_round_won_by:            'The previous round was won by ',
       your_hand:                    'Your Hand',
       btn_confirm_selection:        'Confirm Selection',
 
@@ -115,10 +115,11 @@
       scoreboard_title:             'Scoreboard',
       awesome_point_title:          'Awesome Point',
       awesome_point_plural:         's',
-
+      /* --- Game chat tab --- */
+      chat_with_game_members:       'Chat with game members',
       /* --- Previous round template --- */
       btn_close:                    'Close',
-      round_winner_label:           'Round winner:\u00a0',
+      round_winner_label:           'Round winner: ',
 
       /* --- Game options template --- */
       options_host_only:            'Only the game host can change options.',
@@ -142,7 +143,7 @@
       btn_hide_password:            'Hide password.',
 
       /* --- Lang toggle (opposite language name shown on button) --- */
-      lang_toggle_btn:              '\u05E2\u05D1\u05E8\u05D9\u05EA', /* עברית */
+      lang_toggle_btn:              'עברית', /* עברית */
 
       /* --- index.jsp specific --- */
       pretend_youre:                'Pretend You\'re',
@@ -152,128 +153,129 @@
 
     he: {
       /* --- Branding / page title --- */
-      page_title:                   '\u05D4\u05EA\u05D7\u05D6\u05D4 \u05DC\u05E7\u05E1\u05D9\u05D6\u05D9',
-      logo_text:                    '\u05D4\u05EA\u05D7\u05D6\u05D4 \u05DC\u05E7\u05E1\u05D9\u05D6\u05D9',
-      tagline:                      '\u05E9\u05D9\u05D1\u05D5\u05D8 \u05E9\u05DC <a href="http://cardsagainsthumanity.com/">\u05E7\u05DC\u05E4\u05D9\u05DD \u05E0\u05D2\u05D3 \u05D4\u05D0\u05E0\u05D5\u05E9\u05D5\u05EA</a>.',
+      page_title:                   'Pretend You\'re Xyzzy',
+      logo_text:                    'Pretend You\'re Xyzzy',
+      tagline:                      'שיבוט של <a href="http://cardsagainsthumanity.com/">קלפים נגד האנושות</a>.',
 
       /* --- Welcome / nickname box --- */
-      nickname_label:               '\u05DB\u05D9\u05E0\u05D5\u05D9:',
-      optional_id_label:            '\u05E7\u05D5\u05D3 \u05D6\u05D9\u05D4\u05D5\u05D9 \u05D0\u05D5\u05E4\u05E6\u05D9\u05D5\u05E0\u05DC\u05D9:',
-      optional_id_title:            '\u05D6\u05DE\u05D9\u05DF \u05E8\u05E7 \u05D1-HTTPS. \u05E1\u05E4\u05E7 \u05E7\u05D5\u05D3 \u05D6\u05D9\u05D4\u05D5\u05D9 \u05E1\u05D5\u05D3\u05D9 \u05DC\u05D6\u05D9\u05D4\u05D5\u05D9 \u05D7\u05D9\u05D5\u05D1\u05D9 \u05D1\u05E6\'\u05D0\u05D8.',
-      help_link:                    '(\u05E2\u05D6\u05E8\u05D4)',
-      btn_set:                      '\u05D0\u05D9\u05E9\u05D5\u05E8',
+      nickname_label:               'כינוי:',
+      optional_id_label:            'קוד זיהוי אופציונלי:',
+      optional_id_title:            'זמין רק ב-HTTPS. ספק קוד זיהוי סודי לזיהוי חיובי בצ\'אט.',
+      help_link:                    '(עזרה)',
+      btn_set:                      'אישור',
 
       /* --- Privacy notice --- */
-      ip_logging_notice:            '\u05DB\u05EA\u05D5\u05D1\u05EA ה-IP \u05E9\u05DC \u05D4\u05DE\u05D7\u05E9\u05D1 \u05E9\u05DC\u05DA \u05EA\u05EA\u05D2\u05E8\u05EA <strong>\u05EA\u05DE\u05D9\u05D3</strong> \u05D1\u05E2\u05EA \u05D8\u05E2\u05D9\u05E0\u05EA \u05DC\u05E7\u05D5\u05D7 \u05D4\u05DE\u05E9\u05D7\u05E7. \u05D4\u05D9\u05D0 \u05D0\u05D9\u05E0\u05D4 \u05E7\u05E9\u05D5\u05E8\u05D4 \u05D1\u05E9\u05D5\u05DD \u05D0\u05D5\u05E4\u05DF \u05DC\u05E9\u05DD \u05D4\u05DE\u05E9\u05EA\u05DE\u05E9 \u05E9\u05DC\u05DA. \u05EA\u05D5\u05E6\u05D0\u05D5\u05EA \u05D4\u05DE\u05E9\u05D7\u05E7 \u05E0\u05E9\u05DE\u05E8\u05D5\u05EA \u05DC\u05E6\u05DE\u05D9\u05EA\u05D5\u05EA, \u05D0\u05DA \u05DC\u05DC\u05D0 \u05DE\u05D9\u05D3\u05E2 \u05DE\u05D6\u05D4\u05D4 \u05D0\u05D5\u05EA\u05DA.',
-      privacy_important:            '\u05D7\u05E9\u05D5\u05D1 \u05D1\u05D0\u05DE\u05EA:',
-      privacy_read:                 '\u05E7\u05E8\u05D0 \u05D0\u05EA \u05D3\u05E3 \u05D4\u05E4\u05E8\u05D8\u05D9\u05D9\u05D5\u05EA \u05DC\u05E4\u05E8\u05D8\u05D9\u05DD \u05E2\u05DC \u05DE\u05D9\u05D3\u05E2 \u05D4\u05DE\u05E9\u05D7\u05E7 \u05E9\u05E0\u05D0\u05E1\u05E3 \u05D5\u05D0\u05D9\u05DA \u05D4\u05D5\u05D0 \u05DE\u05E9\u05D5\u05EA\u05E3.',
+      ip_logging_notice:            'כתובת ה-IP של המחשב שלך תתגרת <strong>תמיד</strong> בעת טעינת לקוח המשחק. היא אינה קשורה בשום אופן לשם המשתמש שלך. תוצאות המשחק נשמרות לצמיתות, אך ללא מידע מזהה אותך.',
+      privacy_important:            'חשוב באמת:',
+      privacy_read:                 'קרא את דף הפרטייות לפרטים על מידע המשחק שנאסף ואיך הוא משותף.',
 
       /* --- Menubar buttons --- */
-      btn_refresh_games:            '\u05E8\u05E2\u05E0\u05DF \u05DE\u05E9\u05D7\u05E7\u05D9\u05DD',
-      btn_create_game:              '\u05E6\u05D5\u05E8 \u05DE\u05E9\u05D7\u05E7',
-      filter_games_placeholder:     '\u05E1\u05E0\u05DF \u05DE\u05E9\u05D7\u05E7\u05D9\u05DD \u05DC\u05E4\u05D9 \u05DE\u05D9\u05DC\u05EA \u05DE\u05E4\u05EA\u05D7',
-      btn_leave_game:               '\u05E2\u05D6\u05D5\u05D1 \u05DE\u05E9\u05D7\u05E7',
-      btn_start_game:               '\u05D4\u05EA\u05D7\u05DC \u05DE\u05E9\u05D7\u05E7',
-      btn_stop_game:                '\u05E2\u05E6\u05D5\u05E8 \u05DE\u05E9\u05D7\u05E7',
-      timer_label:                  '\u05DE\u05E9\u05DA \u05D4\u05D8\u05D9\u05D9\u05DE\u05E8 \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9:',
-      timer_seconds:                '\u05E9\u05E0\u05D9\u05D5\u05EA',
-      btn_view_cards:               '\u05D4\u05E6\u05D2 \u05E7\u05DC\u05E4\u05D9\u05DD',
-      btn_view_cards_title:         '\u05E4\u05EA\u05D7 \u05D7\u05DC\u05D5\u05DF \u05D7\u05D3\u05E9 \u05DC\u05E6\u05E4\u05D9\u05D9\u05D4 \u05D1\u05DB\u05DC \u05D4\u05E7\u05DC\u05E4\u05D9\u05DD \u05D1\u05DE\u05E9\u05D7\u05E7.',
-      btn_logout:                   '\u05D4\u05EA\u05E0\u05EA\u05E7',
+      btn_refresh_games:            'רענן משחקים',
+      btn_create_game:              'צור משחק',
+      filter_games_placeholder:     'סנן משחקים לפי מילת מפתח',
+      btn_leave_game:               'עזוב משחק',
+      btn_start_game:               'התחל משחק',
+      btn_stop_game:                'עצור משחק',
+      timer_label:                  'משך הטיימר הנוכחי:',
+      timer_seconds:                'שניות',
+      btn_view_cards:               'הצג קלפים',
+      btn_view_cards_title:         'פתח חלון חדש לצפייה בכל הקלפים במשחק.',
+      btn_logout:                   'התנתק',
 
       /* --- Bottom tabs --- */
-      tab_preferences:              '\u05D4\u05E2\u05D3\u05E4\u05D5\u05EA \u05DE\u05E9\u05EA\u05DE\u05E9',
-      tab_gamelist_filters:         '\u05DE\u05E1\u05E0\u05E0\u05D9 \u05E8\u05E9\u05D9\u05DE\u05EA \u05DE\u05E9\u05D7\u05E7\u05D9\u05DD',
-      tab_global_chat:              '\u05E6\'\u05D0\u05D8 \u05DB\u05DC\u05DC\u05D9',
+      tab_preferences:              'העדפות משתמש',
+      tab_gamelist_filters:         'מסנני רשימת משחקים',
+      tab_global_chat:              'צ\'אט כללי',
 
       /* --- Preferences tab --- */
-      btn_save:                     '\u05E9\u05DE\u05D5\u05E8',
-      btn_revert:                   '\u05D1\u05D8\u05DC \u05E9\u05D9\u05E0\u05D5\u05D9\u05D9\u05DD',
-      pref_hide_connect_quit:       '\u05D4\u05E1\u05EA\u05E8 \u05D0\u05D9\u05E8\u05D5\u05E2\u05D9 \u05D4\u05EA\u05D7\u05D1\u05E8\u05D5\u05EA \u05D5\u05E2\u05D6\u05D9\u05D1\u05D4:',
-      pref_hide_connect_quit_title: '\u05D2\u05DD \u05D1\u05DC\u05DC\u05D0 \u05E1\u05D9\u05DE\u05D5\u05DF \u05D6\u05D4, \u05D9\u05D9\u05EA\u05DB\u05DF \u05E9\u05DC\u05D0 \u05EA\u05E8\u05D0\u05D4 \u05D0\u05D9\u05E8\u05D5\u05E2\u05D9\u05DD \u05D0\u05DC\u05D5 \u05D0\u05DD \u05D4\u05E9\u05E8\u05EA \u05DE\u05D5\u05D2\u05D3\u05E8 \u05DC\u05D0 \u05DC\u05E9\u05DC\u05D5\u05D7 \u05D0\u05D5\u05EA\u05DD.',
-      pref_chat_ignore:             '\u05E8\u05E9\u05D9\u05DE\u05EA \u05D4\u05EA\u05E2\u05DC\u05DE\u05D5\u05EA \u05D1\u05E6\'\u05D0\u05D8, \u05E9\u05DD \u05D0\u05D7\u05D3 \u05D1\u05DB\u05DC \u05E9\u05D5\u05E8\u05D4:',
-      pref_no_persistent_id:        '\u05D1\u05D9\u05D8\u05D5\u05DC \u05DE\u05E2\u05E7\u05D1 \u05D0\u05D7\u05E8 \u05DE\u05E9\u05D7\u05E7 \u05E7\u05DC\u05E4\u05D9\u05DD \u05D1\u05D9\u05DF \u05E1\u05E9\u05E0\u05D9\u05DD:',
-      pref_no_persistent_id_title:  '\u05D2\u05DD \u05E2\u05DD \u05D0\u05E4\u05E9\u05E8\u05D5\u05EA \u05D6\u05D5 \u05DE\u05E1\u05D5\u05DE\u05E0\u05EA, \u05DE\u05E9\u05D7\u05E7\u05D9 \u05E7\u05DC\u05E4\u05D9\u05DD \u05D1\u05E1\u05E9\u05DF \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9 \u05E2\u05D3\u05D9\u05D9\u05DF \u05D9\u05E2\u05E7\u05D1\u05D5.',
+      btn_save:                     'שמור',
+      btn_revert:                   'בטל שינויים',
+      pref_hide_connect_quit:       'הסתר אירועי התחברות ועזיבה:',
+      pref_hide_connect_quit_title: 'גם בללא סימון זה, ייתכן שלא תראה אירועים אלו אם השרת מוגדר לא לשלוח אותם.',
+      pref_chat_ignore:             'רשימת התעלמות בצ\'אט, שם אחד בכל שורה:',
+      pref_no_persistent_id:        'ביטול מעקב אחר משחק קלפים בין סשנים:',
+      pref_no_persistent_id_title:  'גם עם אפשרות זו מסומנת, משחקי קלפים בסשן הנוכחי עדיין יעקבו.',
 
       /* --- Game list filters tab --- */
-      filter_refresh_note:          '\u05D9\u05D4\u05D9\u05D4 \u05E2\u05DC\u05D9\u05DA \u05DC\u05DC\u05D7\u05D5\u05E5 \u05E2\u05DC \u05E8\u05E2\u05E0\u05DF \u05DE\u05E9\u05D7\u05E7\u05D9\u05DD \u05DC\u05D0\u05D7\u05E8 \u05E9\u05DE\u05D9\u05E8\u05EA \u05E9\u05D9\u05E0\u05D5\u05D9\u05D9\u05DD.',
-      legend_card_set_filters:      '\u05DE\u05E1\u05E0\u05E0\u05D9 \u05D7\u05D1\u05D9\u05DC\u05D5\u05EA \u05E7\u05DC\u05E4\u05D9\u05DD',
-      filter_do_not_show:           '\u05D0\u05DC \u05EA\u05E6\u05D9\u05D2 \u05DE\u05E9\u05D7\u05E7\u05D9\u05DD \u05E2\u05DD \u05D7\u05D1\u05D9\u05DC\u05D5\u05EA \u05E7\u05DC\u05E4\u05D9\u05DD \u05D0\u05DC\u05D5:',
-      filter_do_not_show_title:     '\u05DB\u05DC \u05DE\u05E9\u05D7\u05E7 \u05E9\u05DE\u05E9\u05EA\u05DE\u05E9 \u05D1\u05D0\u05D7\u05EA \u05DE\u05D7\u05D1\u05D9\u05DC\u05D5\u05EA \u05E7\u05DC\u05E4\u05D9\u05DD \u05D0\u05DC\u05D5 \u05DC\u05D0 \u05D9\u05D5\u05E6\u05D2 \u05D1\u05E8\u05E9\u05D9\u05DE\u05EA \u05D4\u05DE\u05E9\u05D7\u05E7\u05D9\u05DD.',
-      filter_neutral:               '\u05D0\u05DC \u05EA\u05D3\u05E8\u05D5\u05E9 \u05D5\u05D0\u05DC \u05EA\u05D7\u05E1\u05D5\u05DD \u05D7\u05D1\u05D9\u05DC\u05D5\u05EA \u05E7\u05DC\u05E4\u05D9\u05DD \u05D0\u05DC\u05D5:',
-      filter_only_show:             '\u05D4\u05E6\u05D2 \u05E8\u05E7 \u05DE\u05E9\u05D7\u05E7\u05D9\u05DD \u05E2\u05DD \u05D7\u05D1\u05D9\u05DC\u05D5\u05EA \u05E7\u05DC\u05E4\u05D9\u05DD \u05D0\u05DC\u05D5:',
-      filter_only_show_title:       '\u05DB\u05DC \u05DE\u05E9\u05D7\u05E7 \u05E9\u05DC\u05D0 \u05DE\u05E9\u05EA\u05DE\u05E9 \u05D1\u05DB\u05DC \u05D7\u05D1\u05D9\u05DC\u05D5\u05EA \u05E7\u05DC\u05E4\u05D9\u05DD \u05D0\u05DC\u05D5 \u05DC\u05D0 \u05D9\u05D5\u05E6\u05D2 \u05D1\u05E8\u05E9\u05D9\u05DE\u05D4.',
-      btn_remove_right:             '\u05D4\u05E1\u05E8 \u2192',
-      btn_ban:                      '\u2190 \u05D7\u05E1\u05D5\u05DD',
-      btn_require_right:            '\u05D3\u05E8\u05D5\u05E9 \u2192',
-      btn_remove_left:              '\u2190 \u05D4\u05E1\u05E8',
+      filter_refresh_note:          'יהיה עליך ללחוץ על רענן משחקים לאחר שמירת שינויים.',
+      legend_card_set_filters:      'מסנני חבילות קלפים',
+      filter_do_not_show:           'אל תציג משחקים עם חבילות קלפים אלו:',
+      filter_do_not_show_title:     'כל משחק שמשתמש באחת מחבילות קלפים אלו לא יוצג ברשימת המשחקים.',
+      filter_neutral:               'אל תדרוש ואל תחסום חבילות קלפים אלו:',
+      filter_only_show:             'הצג רק משחקים עם חבילות קלפים אלו:',
+      filter_only_show_title:       'כל משחק שלא משתמש בכל חבילות קלפים אלו לא יוצג ברשימה.',
+      btn_remove_right:             'הסר →',
+      btn_ban:                      '← חסום',
+      btn_require_right:            'דרוש →',
+      btn_remove_left:              '← הסר',
 
       /* --- Global chat tab --- */
-      btn_chat:                     '\u05E9\u05DC\u05D7',
-      chat_placeholder:             '\u05D4\u05E7\u05DC\u05D3 \u05DB\u05D0\u05DF \u05DC\u05E6\'\u05D0\u05D8.',
+      btn_chat:                     'שלח',
+      chat_placeholder:             'הקלד כאן לצ\'אט.',
 
       /* --- Gamelist lobby template --- */
-      lobby_game_suffix:            ' \u05DE\u05E9\u05D7\u05E7',
-      lobby_players_label:          '\u05E9\u05D7\u05E7\u05E0\u05D9\u05DD:',
-      lobby_spectators_label:       '\u05E6\u05D5\u05E4\u05D9\u05DD:',
-      lobby_goal_label:             '\u05D9\u05E2\u05D3:',
-      lobby_cards_label:            '\u05E7\u05DC\u05E4\u05D9\u05DD:',
-      btn_join:                     '\u05D4\u05E6\u05D8\u05E8\u05E3',
-      btn_spectate:                 '\u05E6\u05E4\u05D4',
+      lobby_game_suffix:            ' משחק',
+      lobby_players_label:          'שחקנים:',
+      lobby_spectators_label:       'צופים:',
+      lobby_goal_label:             'יעד:',
+      lobby_cards_label:            'קלפים:',
+      btn_join:                     'הצטרף',
+      btn_spectate:                 'צפה',
 
       /* --- Card templates --- */
-      card_draw:                    '\u05E9\u05DC\u05D5\u05E3',
-      card_pick:                    '\u05D1\u05D7\u05E8',
+      card_draw:                    'שלוף',
+      card_pick:                    'בחר',
 
       /* --- Game template --- */
-      btn_show_last_round:          '\u05D4\u05E6\u05D2 \u05E1\u05D9\u05D1\u05D5\u05D1 \u05D0\u05D7\u05E8\u05D5\u05DF',
-      btn_hide_game_options:        '\u05D4\u05E1\u05EA\u05E8 \u05D0\u05E4\u05E9\u05E8\u05D5\u05D9\u05D5\u05EA \u05DE\u05E9\u05D7\u05E7',
-      game_animate_cards:           ' \u05D0\u05E0\u05D9\u05DE\u05E6\u05D9\u05D9\u05EA \u05E7\u05DC\u05E4\u05D9\u05DD',
-      game_waiting:                 '\u05DE\u05DE\u05EA\u05D9\u05DF \u05DC\u05E9\u05E8\u05EA\u2026',
-      black_card_for:               '\u05E7\u05DC\u05E3 \u05D4\u05E9\u05D7\u05D5\u05E8 \u05E2\u05D1\u05D5\u05E8',
-      this_round_is:                '\u05D4\u05E1\u05D9\u05D1\u05D5\u05D1 \u05D4\u05D6\u05D4 \u05D4\u05D5\u05D0',
-      white_cards_played:           '\u05E7\u05DC\u05E4\u05D9 \u05D4\u05DC\u05D1\u05DF \u05E9\u05D4\u05D5\u05E9\u05E7\u05D5 \u05D1\u05E1\u05D9\u05D1\u05D5\u05D1 \u05D6\u05D4:',
-      prev_round_won_by:            '\u05D4\u05E1\u05D9\u05D1\u05D5\u05D1 \u05D4\u05E7\u05D5\u05D3\u05DD \u05E0\u05D5\u05E6\u05D7 \u05E2\u05DC \u05D9\u05D3\u05D9\u00a0',
-      your_hand:                    '\u05D4\u05D9\u05D3 \u05E9\u05DC\u05DA',
-      btn_confirm_selection:        '\u05D0\u05E9\u05E8 \u05D1\u05D7\u05D9\u05E8\u05D4',
+      btn_show_last_round:          'הצג סיבוב אחרון',
+      btn_hide_game_options:        'הסתר אפשרויות משחק',
+      game_animate_cards:           ' אנימציית קלפים',
+      game_waiting:                 'ממתין לשרת…',
+      black_card_for:               'קלף השחור עבור',
+      this_round_is:                'הסיבוב הזה הוא',
+      white_cards_played:           'קלפי הלבן שהושקו בסיבוב זה:',
+      prev_round_won_by:            'הסיבוב הקודם נוצח על ידי ',
+      your_hand:                    'היד שלך',
+      btn_confirm_selection:        'אשר בחירה',
 
       /* --- Scoreboard --- */
-      scoreboard_title:             '\u05DC\u05D5\u05D7 \u05EA\u05D5\u05E6\u05D0\u05D5\u05EA',
-      awesome_point_title:          '\u05E0\u05E7\u05D5\u05D3\u05D4 \u05DE\u05D3\u05D4\u05D9\u05DE\u05D4',
+      scoreboard_title:             'לוח תוצאות',
+      awesome_point_title:          'נקודה מדהימה',
       awesome_point_plural:         '',
-
+      /* --- Game chat tab --- */
+      chat_with_game_members:       'שוחח עם חברי המשחק',
       /* --- Previous round template --- */
-      btn_close:                    '\u05E1\u05D2\u05D5\u05E8',
-      round_winner_label:           '\u05DE\u05E0\u05E6\u05D7 \u05D4\u05E1\u05D9\u05D1\u05D5\u05D1:\u00a0',
+      btn_close:                    'סגור',
+      round_winner_label:           'מנצח הסיבוב: ',
 
       /* --- Game options template --- */
-      options_host_only:            '\u05E8\u05E7 \u05DE\u05D0\u05E8\u05D7 \u05D4\u05DE\u05E9\u05D7\u05E7 \u05D9\u05DB\u05D5\u05DC \u05DC\u05E9\u05E0\u05D5\u05EA \u05D0\u05E4\u05E9\u05E8\u05D5\u05D9\u05D5\u05EA.',
-      legend_game_options:          '\u05D0\u05E4\u05E9\u05E8\u05D5\u05D9\u05D5\u05EA \u05DE\u05E9\u05D7\u05E7:',
-      score_limit_label:            '\u05DE\u05D2\u05D1\u05DC\u05EA \u05E0\u05D9\u05E7\u05D5\u05D3:',
-      player_limit_label:           '\u05DE\u05D2\u05D1\u05DC\u05EA \u05E9\u05D7\u05E7\u05E0\u05D9\u05DD:',
-      player_limit_note:            '\u05D9\u05D5\u05EA\u05E8 \u05DE-10 \u05E9\u05D7\u05E7\u05E0\u05D9\u05DD \u05E2\u05DC\u05D5\u05DC \u05DC\u05D2\u05E8\u05D5\u05DD \u05DC\u05E6\u05E4\u05D9\u05E4\u05D5\u05EA!',
-      spectator_limit_label:        '\u05DE\u05D2\u05D1\u05DC\u05EA \u05E6\u05D5\u05E4\u05D9\u05DD:',
-      spectator_note:               '\u05E6\u05D5\u05E4\u05D9\u05DD \u05D9\u05DB\u05D5\u05DC\u05D9\u05DD \u05DC\u05E6\u05E4\u05D5\u05EA \u05D5\u05DC\u05E9\u05D5\u05D7\u05D7, \u05D0\u05DA \u05DC\u05D0 \u05DC\u05E9\u05D7\u05E7. \u05D0\u05E4\u05D9\u05DC\u05D5 \u05DC\u05D0 \u05DB\u05E6\u05D0\u05E8.',
-      timer_multiplier_label:       '\u05DE\u05DB\u05E4\u05D9\u05DC \u05D8\u05D9\u05D9\u05DE\u05E8 \u05D7\u05D5\u05E1\u05E8 \u05E4\u05E2\u05D9\u05DC\u05D5\u05EA:',
-      timer_unlimited:              '\u05DC\u05DC\u05D0 \u05D4\u05D2\u05D1\u05DC\u05D4',
-      legend_card_sets:             '\u05D7\u05D1\u05D9\u05DC\u05D5\u05EA \u05E7\u05DC\u05E4\u05D9\u05DD',
-      legend_custom_card_sets:      '\u05D7\u05D1\u05D9\u05DC\u05D5\u05EA \u05E7\u05DC\u05E4\u05D9\u05DD \u05DE\u05D5\u05EA\u05D0\u05DE\u05D5\u05EA',
-      btn_upload_json:              '\u05D4\u05E2\u05DC\u05D4 JSON',
-      btn_download_url:             '\u05D4\u05D5\u05E8\u05D3 \u05DE-URL',
-      btn_remove_selected:          '\u05D4\u05E1\u05E8 \u05E0\u05D1\u05D7\u05E8\u05D9\u05DD',
-      blank_cards_include:          '\u05DB\u05DC\u05DC \u05D2\u05DD',
-      blank_cards_suffix:           '\u05E7\u05DC\u05E4\u05D9 \u05DC\u05D1\u05DF \u05E8\u05D9\u05E7\u05D9\u05DD.',
-      game_password_label:          '\u05E1\u05D9\u05E1\u05DE\u05EA \u05DE\u05E9\u05D7\u05E7:',
-      password_apply_note:          '\u05E2\u05DC\u05D9\u05DA \u05DC\u05DC\u05D7\u05D5\u05E5 \u05DE\u05D7\u05D5\u05E5 \u05DC\u05EA\u05D9\u05D1\u05D4 \u05DC\u05D4\u05D7\u05D9\u05DC \u05D0\u05EA \u05D4\u05E1\u05D9\u05E1\u05DE\u05D4.',
-      btn_hide_password:            '\u05D4\u05E1\u05EA\u05E8 \u05E1\u05D9\u05E1\u05DE\u05D4.',
+      options_host_only:            'רק מארח המשחק יכול לשנות אפשרויות.',
+      legend_game_options:          'אפשרויות משחק:',
+      score_limit_label:            'מגבלת ניקוד:',
+      player_limit_label:           'מגבלת שחקנים:',
+      player_limit_note:            'יותר מ-10 שחקנים עלול לגרום לצפיפות!',
+      spectator_limit_label:        'מגבלת צופים:',
+      spectator_note:               'צופים יכולים לצפות ולשוחח, אך לא לשחק. אפילו לא כפוסק.',
+      timer_multiplier_label:       'מכפיל טיימר חוסר פעילות:',
+      timer_unlimited:              'ללא הגבלה',
+      legend_card_sets:             'חבילות קלפים',
+      legend_custom_card_sets:      'חבילות קלפים מותאמות',
+      btn_upload_json:              'העלה JSON',
+      btn_download_url:             'הורד מ-URL',
+      btn_remove_selected:          'הסר נבחרים',
+      blank_cards_include:          'כלל גם',
+      blank_cards_suffix:           'קלפי לבן ריקים.',
+      game_password_label:          'סיסמת משחק:',
+      password_apply_note:          'עליך ללחוץ מחוץ לתיבה להחיל את הסיסמה.',
+      btn_hide_password:            'הסתר סיסמה.',
 
       /* --- Lang toggle --- */
       lang_toggle_btn:              'English',
 
       /* --- index.jsp specific --- */
-      pretend_youre:                '\u05D4\u05EA\u05D7\u05D6\u05D4 \u05DC',
-      xyzzy_dfn_title:              '\u05E7\u05E1\u05D9\u05D6\u05D9 \u05D4\u05D5\u05D0 \u05D1\u05D5\u05D8 \u05D1\u05D9\u05E0\u05D4 \u05DE\u05DC\u05D0\u05DB\u05D5\u05EA\u05D9\u05EA \u05E2\u05DC\u05D9\u05D5\u05DC\u05EA\u05D9. \u05EA\u05D4\u05D9\u05D4 \u05D4\u05D2\u05D9\u05D5\u05E0\u05D9 \u05D9\u05D5\u05EA\u05E8 \u05DE\u05DE\u05E0\u05D5.',
-      btn_go_to_game:               '\u05E7\u05E8\u05D0\u05EA\u05D9 \u05D0\u05EA \u05D4\u05E0\u05D3\u05E8\u05E9; \u05E7\u05D7 \u05D0\u05D5\u05EA\u05D9 \u05DC\u05DE\u05E9\u05D7\u05E7!'
+      pretend_youre:                'התחזה ל',
+      xyzzy_dfn_title:              'קסיזי הוא בוט בינה מלאכותית עליולתי. תהיה הגיוני יותר ממנו.',
+      btn_go_to_game:               'קראתי את הנדרש; קח אותי למשחק!'
     }
   };
 
@@ -292,6 +294,12 @@
     /** Flip between English and Hebrew. */
     toggle: function () {
       this.apply(this.currentLang === 'en' ? 'he' : 'en');
+    },
+
+    /** Look up a translation key in the current language. */
+    t: function (key) {
+      var t = translations[this.currentLang] || translations.en;
+      return (t[key] !== undefined) ? t[key] : (translations.en[key] || key);
     },
 
     /**
@@ -366,8 +374,35 @@
         }
       });
 
-      /* Update the toggle button label to name the *other* language */
-      $('#lang_toggle').text(t.lang_toggle_btn);
+      /* Override GamePlayerStatus constants for dynamically-set status strings */
+      if (window.cah && cah.$ && cah.$.GamePlayerStatus_msg) {
+        var statusMsg = {
+          en: { sjj: 'Selecting',   sv: 'Spectator', sw: 'Winner!',  sh: 'Host',   si: '',       sj: 'Card Czar', sp: 'Playing' },
+          he: { sjj: 'בוחר',        sv: 'צופה',       sw: '!מנצח',   sh: 'מארח',   si: '',       sj: 'פוסק',        sp: 'משחק' }
+        };
+        var statusMsg2 = {
+          en: { sjj: 'Select a winning card.',  sv: 'You are just spectating.',          sw: 'You have won!',
+                sh: 'Wait for players then click Start Game.',                            si: 'Waiting for players...',
+                sj: 'You are the Card Czar.',   sp: 'Select a card to play.' },
+          he: { sjj: '.בחר קלף מנצח',           sv: '.אתה רק צופה',                      sw: '!ניצחת',
+                sh: '.המתן לשחקנים ולאחר מכן לחץ על התחל משחק',                          si: '...ממתין לשחקנים',
+                sj: '.אתה הפוסק',                sp: '.בחר קלף לשחק' }
+        };
+        var sm  = statusMsg[lang]  || statusMsg.en;
+        var sm2 = statusMsg2[lang] || statusMsg2.en;
+        for (var k in sm)  { if (Object.prototype.hasOwnProperty.call(sm,  k)) { cah.$.GamePlayerStatus_msg[k]   = sm[k];  } }
+        for (var k in sm2) { if (Object.prototype.hasOwnProperty.call(sm2, k)) { cah.$.GamePlayerStatus_msg_2[k] = sm2[k]; } }
+      }
+
+      /* Update all the toggle buttons labels to name the *other* language */
+      $('.lang_toggle').each(function () {
+        $(this).text(t.lang_toggle_btn);
+      });
+
+      /* Update dynamically-created game chat tab label */
+      if (t.chat_with_game_members) {
+        $('.game_chat_tab_label').text(t.chat_with_game_members);
+      }
     }
   };
 

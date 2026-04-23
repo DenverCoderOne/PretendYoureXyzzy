@@ -673,37 +673,6 @@ dfn {
 }
 
 /* ============================================================
-   Language Toggle Button
-   ============================================================ */
-
-#lang_toggle {
-    position: fixed;
-    top: 44px;
-    right: 8px;
-    z-index: 9999;
-    padding: 4px 10px;
-    font-size: 12pt;
-    font-weight: bold;
-    background: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    opacity: 0.85;
-}
-
-#lang_toggle:hover {
-    opacity: 1;
-    background: #555;
-}
-
-/* In RTL mode the toggle sits on the left edge instead */
-html[dir="rtl"] #lang_toggle {
-    right: auto;
-    left: 8px;
-}
-
-/* ============================================================
    RTL Layout Overrides  (applied when dir="rtl" is set on <html>)
    All physical left/right values are mirrored here so that
    text-align:start / justify-content:flex-start / etc. work
@@ -765,7 +734,7 @@ html[dir="rtl"] .game_options {
 /* --- Card metadata (DRAW / PICK labels on black cards) --- */
 html[dir="rtl"] .card_metadata {
     right: auto;
-    left: 15px;
+    left: 68px;
 }
 
 html[dir="rtl"] .draw,

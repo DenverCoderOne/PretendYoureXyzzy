@@ -41,7 +41,7 @@ to, for instance, display the number of connected players.
     <script type="text/javascript" src="js/cah.i18n.js"></script>
 </head>
 <body>
-<button id="lang_toggle" onclick="cah.I18n.toggle()" title="Switch language / החלף שפה">עברית</button>
+<button class="lang_toggle" onclick="cah.I18n.toggle()" title="Switch language / החלף שפה">עברית</button>
 <h1>
     <span data-i18n="pretend_youre">Pretend You're</span> <dfn style="border-bottom: 1px dotted black"
                         title="Xyzzy is an Artificial Unintelligence bot. You'll be making more sense than him in this game."
