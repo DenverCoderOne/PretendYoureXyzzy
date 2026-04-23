@@ -53,7 +53,7 @@ import java.util.regex.Pattern;
 public class CustomCardsService {
   private static final Logger LOG = LogManager.getLogger(CustomCardsService.class);
 
-  private static final int GET_TIMEOUT = (int) TimeUnit.SECONDS.toMillis(3);
+  private static final int GET_TIMEOUT = (int) TimeUnit.SECONDS.toMillis(15);
 
   private static final LinkedList<SoftReference<CacheEntry>> cache = new LinkedList<SoftReference<CacheEntry>>();
 
@@ -297,6 +297,8 @@ public class CustomCardsService {
     conn.setDoInput(true);
     conn.setDoOutput(false);
     conn.setRequestMethod("GET");
+    conn.setRequestProperty("User-Agent", "PretendYoureXyzzy/1.0");
+    conn.setRequestProperty("Accept", "application/json, text/plain, */*");
     conn.setInstanceFollowRedirects(true);
     conn.setReadTimeout(GET_TIMEOUT);
     conn.setConnectTimeout(GET_TIMEOUT);
@@ -307,7 +309,10 @@ public class CustomCardsService {
       return null;
     }
     final String contentType = conn.getContentType();
-    if (contentType == null || !contentType.startsWith("application/json")) {
+    if (contentType != null
+        && !contentType.startsWith("application/json")
+        && !contentType.startsWith("text/plain")
+        && !contentType.startsWith("text/html")) {
       LOG.error(String.format("Got content-type %s for %s", contentType, urlStr));
       return null;
     }
