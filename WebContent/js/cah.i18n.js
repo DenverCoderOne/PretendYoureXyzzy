@@ -206,10 +206,10 @@
       filter_neutral:               'אל תדרוש ואל תחסום חבילות קלפים אלו:',
       filter_only_show:             'הצג רק משחקים עם חבילות קלפים אלו:',
       filter_only_show_title:       'כל משחק שלא משתמש בכל חבילות קלפים אלו לא יוצג ברשימה.',
-      btn_remove_right:             'הסר →',
-      btn_ban:                      '← חסום',
-      btn_require_right:            'דרוש →',
-      btn_remove_left:              '← הסר',
+      btn_remove_right:             '← הסר',
+      btn_ban:                      'חסום →',
+      btn_require_right:            '← דרוש',
+      btn_remove_left:              'הסר →',
 
       /* --- Global chat tab --- */
       btn_chat:                     'שלח',
