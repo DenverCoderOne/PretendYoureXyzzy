@@ -79,8 +79,8 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
     <script type="text/javascript" src="js/cah.ajax.builder.js"></script>
     <script type="text/javascript" src="js/cah.ajax.handlers.js"></script>
     <script type="text/javascript" src="js/cah.app.js"></script>
-    <script type="text/javascript" src="js/cah.i18n.js"></script>
-    <link rel="stylesheet" type="text/css" href="cah.css" media="screen"/>
+    <script type="text/javascript" src="js/cah.i18n.js?v=20260423T1535"></script>
+    <link rel="stylesheet" type="text/css" href="cah.css?v=20260423T1535" media="screen"/>
     <link rel="stylesheet" type="text/css" href="jquery-ui.min.css" media="screen"/>
     <jsp:include page="analytics.jsp"/>
 </head>
