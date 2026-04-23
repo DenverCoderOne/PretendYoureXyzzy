@@ -374,8 +374,7 @@ function app_resize() {
 
     var chatWidth = $("#canvas").width() - 257;
     $("#tabs").width(chatWidth + 'px');
-    var bottomHeight = $(window).height() - $("#main").height() - $("#menubar").height() - 29;
-    $("#bottom").height(bottomHeight);
+    var bottomHeight = $("#bottom").height();
     $("#info_area").height(bottomHeight);
     $("#tabs").height(bottomHeight);
     $("#tab-preferences").height(bottomHeight - 45);
@@ -399,11 +398,13 @@ function app_resize() {
 }
 
 function do_app_resize(chatElement, logElement) {
-    var chatWidth = $("#canvas").width() - 257;
-    logElement.width((chatWidth + 2) + 'px');
-    chatElement.width((chatWidth - 42) + 'px');
-    var bottomHeight = $(window).height() - $("#main").height() - $("#menubar").height() - 29;
-    logElement.height(bottomHeight - chatElement.height() - 40);
+    // Set tab panel height so the flex log child can expand to fill it.
+    var tabPanel = chatElement.closest('[id^="tab-"]');
+    if (tabPanel.length) {
+        var bottomHeight = $("#bottom").height();
+        var tabsHeaderHeight = $(".ui-tabs-nav", $("#tabs")).outerHeight(true) || 30;
+        tabPanel.height(bottomHeight - tabsHeaderHeight - 2);
+    }
 }
 
 cah.logUserPermalinks = function (data) {

@@ -132,6 +132,7 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
   </p>
 </div>
 
+<div id="split_container">
 <div id="canvas" class="hide">
     <div id="menubar">
         <div id="menubar_left">
@@ -161,6 +162,7 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
         </div>
     </div>
 </div>
+<div id="split_divider"></div>
 <div id="bottom" class="hide">
     <div id="info_area">
     </div>
@@ -246,12 +248,15 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
         </div>
         <div id="tab-global">
             <div class="log"></div>
-            <input type="text" class="chat" maxlength="200" aria-label="Type here to chat."
-                   data-i18n-placeholder="chat_placeholder" data-i18n-aria="chat_placeholder"
-                   data-lpignore="true"/>
-            <input type="button" class="chat_submit" value="Chat" data-i18n-value="btn_chat"/>
+            <div class="chat_row">
+                <input type="text" class="chat" maxlength="200" aria-label="Type here to chat."
+                       data-i18n-placeholder="chat_placeholder" data-i18n-aria="chat_placeholder"
+                       data-lpignore="true"/>
+                <input type="button" class="chat_submit" value="Chat" data-i18n-value="btn_chat"/>
+            </div>
         </div>
     </div>
+</div>
 </div>
 
 <!-- Template for game lobbies in the game list. -->
@@ -543,6 +548,45 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
   </div>
 </div>
 <div style="position:absolute; left:-99999px" role="alert" id="aria-notifications"></div>
+<script type="text/javascript">
+(function() {
+  function initSplitDivider() {
+    var divider = document.getElementById('split_divider');
+    var bottom = document.getElementById('bottom');
+    var container = document.getElementById('split_container');
+    if (!divider || !bottom || !container) return;
+    divider.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      var startY = e.clientY;
+      var startBottomH = bottom.getBoundingClientRect().height;
+      var containerH = container.getBoundingClientRect().height;
+      var dividerH = divider.getBoundingClientRect().height;
+      document.body.style.cursor = 'ns-resize';
+      document.body.style.userSelect = 'none';
+      function onMouseMove(e) {
+        var delta = startY - e.clientY;
+        var maxBottom = containerH - dividerH - 100;
+        var newBottomH = Math.max(50, Math.min(maxBottom, startBottomH + delta));
+        bottom.style.flexBasis = newBottomH + 'px';
+        if (typeof app_resize === 'function') app_resize();
+      }
+      function onMouseUp() {
+        document.body.style.cursor = '';
+        document.body.style.userSelect = '';
+        document.removeEventListener('mousemove', onMouseMove);
+        document.removeEventListener('mouseup', onMouseUp);
+      }
+      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onMouseUp);
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSplitDivider);
+  } else {
+    initSplitDivider();
+  }
+})();
+</script>
 <script type="text/javascript">
   $(document).ready(function() { cah.I18n.init(); });
 </script>
