@@ -128,7 +128,7 @@
       player_limit_label:           'Player limit:',
       player_limit_note:            'Having more than 10 players may get cramped!',
       spectator_limit_label:        'Spectator limit:',
-      spectator_note:               'Spectators can watch and chat, but not actually play. Not even as Czar.',
+      spectator_note:               'Spectators can watch and chat, but not actually play. Not even as a Judge.',
       timer_multiplier_label:       'Idle timer multiplier:',
       timer_unlimited:              'Unlimited',
       legend_card_sets:             'Card Sets',
@@ -242,7 +242,7 @@
 
       /* --- Scoreboard --- */
       scoreboard_title:             'לוח תוצאות',
-      awesome_point_title:          'נקודה מדהימה',
+      awesome_point_title:          'נקודות',
       awesome_point_plural:         '',
       /* --- Game chat tab --- */
       chat_with_game_members:       'שוחח עם חברי המשחק',
@@ -391,13 +391,13 @@
       /* Override GamePlayerStatus constants for dynamically-set status strings */
       if (window.cah && cah.$ && cah.$.GamePlayerStatus_msg) {
         var statusMsg = {
-          en: { sjj: 'Selecting',   sv: 'Spectator', sw: 'Winner!',  sh: 'Host',   si: '',       sj: 'Card Czar', sp: 'Playing' },
-          he: { sjj: 'בוחר',        sv: 'צופה',       sw: '!מנצח',   sh: 'מארח',   si: '',       sj: 'פוסק',        sp: 'משחק' }
+          en: { sjj: 'Selecting',   sv: 'Spectator', sw: 'Winner!',  sh: 'Host',   si: '',       sj: 'Judge', sp: 'Player' },
+          he: { sjj: 'בוחר',        sv: 'צופה',       sw: '!מנצח',   sh: 'מארח',   si: '',       sj: 'פוסק',        sp: 'שחקן' }
         };
         var statusMsg2 = {
           en: { sjj: 'Select a winning card.',  sv: 'You are just spectating.',          sw: 'You have won!',
                 sh: 'Wait for players then click Start Game.',                            si: 'Waiting for players...',
-                sj: 'You are the Card Czar.',   sp: 'Select a card to play.' },
+                sj: 'You are the Judge.',   sp: 'Select a card to play.' },
           he: { sjj: '.בחר קלף מנצח',           sv: '.אתה רק צופה',                      sw: '!ניצחת',
                 sh: '.המתן לשחקנים ולאחר מכן לחץ על התחל משחק',                          si: '...ממתין לשחקנים',
                 sj: '.אתה הפוסק',                sp: '.בחר קלף לשחק' }

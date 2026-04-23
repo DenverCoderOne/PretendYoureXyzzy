@@ -1036,7 +1036,7 @@ cah.Game.prototype.reshuffle = function (deck) {
  */
 cah.Game.prototype.judgeLeft = function (data) {
     cah.log.status_with_game(this,
-        "The Card Czar has left the game. Cards played this round are being returned to hands.");
+        "The Judge has left the game. Cards played this round are being returned to hands.");
     cah.log.status_with_game(this, "The next round will begin in "
         + (data[cah.$.LongPollResponse.INTERMISSION] / 1000) + " seconds.");
     cah.log.status_with_game(this, "(Displayed state will look weird until the next round.)");
@@ -1046,7 +1046,7 @@ cah.Game.prototype.judgeLeft = function (data) {
  * The judge was skipped for taking too long.
  */
 cah.Game.prototype.judgeSkipped = function () {
-    cah.log.status_with_game(this, "The Card Czar has taken too long to decide and has been skipped."
+    cah.log.status_with_game(this, "The Judge has taken too long to decide and has been skipped."
         + " Cards played this round are being returned to hands.");
 };
 

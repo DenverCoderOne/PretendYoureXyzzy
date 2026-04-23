@@ -21,8 +21,8 @@ var GamePlayerStatusMsgs = map[string]string{
 	 "sw": "Winner!",
 	 "sh": "Host",
 	 "si": "",
-	 "sj": "Card Czar",
-	 "sp": "Playing",
+	 "sj": "Judge",
+	 "sp": "Player",
 }
 
 var GamePlayerStatusMsgs2 = map[string]string{
@@ -31,7 +31,7 @@ var GamePlayerStatusMsgs2 = map[string]string{
 	 "sw": "You have won!",
 	 "sh": "Wait for players then click Start Game.",
 	 "si": "Waiting for players...",
-	 "sj": "You are the Card Czar.",
+	 "sj": "You are the Judge.",
 	 "sp": "Select a card to play.",
 }
 

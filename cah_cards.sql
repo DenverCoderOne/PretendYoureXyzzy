@@ -667,7 +667,7 @@ COPY black_cards (id, draw, pick, text, watermark) FROM stdin;
 559	0	1	Hold up. I gotta deal with ____, then I'mma smoke this.	WEED
 561	0	1	Okay here's the pitch. James Franco and Seth Rogen are trying to score some weed, and then ____ happens.	WEED
 562	0	1	You know what's like, really funny when you think about it? ____.	WEED
-563	0	1	Instead of playing a card this round, everyone must stare at the Card Czar while making a sound you'd make after tasting something delicious.	WEED
+563	0	1	Instead of playing a card this round, everyone must stare at the Judge while making a sound you'd make after tasting something delicious.	WEED
 564	0	1	Everyone is staring at you because you're ____.	WEED
 565	0	1	Wait, I came here to buy socks. How did I wind up with ____?	RTPRD
 567	0	1	Hey, you guys want to try this awesome new game? It's called ____.	TBLTP
