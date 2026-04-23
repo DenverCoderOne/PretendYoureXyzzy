@@ -671,3 +671,148 @@ dfn {
     unicode-bidi: plaintext;
     text-align: start;
 }
+
+/* ============================================================
+   Language Toggle Button
+   ============================================================ */
+
+#lang_toggle {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    z-index: 9999;
+    padding: 4px 10px;
+    font-size: 12pt;
+    font-weight: bold;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+#lang_toggle:hover {
+    opacity: 1;
+    background: #555;
+}
+
+/* In RTL mode the toggle sits on the left edge instead */
+html[dir="rtl"] #lang_toggle {
+    right: auto;
+    left: 8px;
+}
+
+/* ============================================================
+   RTL Layout Overrides  (applied when dir="rtl" is set on <html>)
+   All physical left/right values are mirrored here so that
+   text-align:start / justify-content:flex-start / etc. work
+   correctly for Hebrew text flow.
+   ============================================================ */
+
+/* --- Menubar --- */
+html[dir="rtl"] #menubar_left {
+    float: right;
+}
+
+html[dir="rtl"] #menubar_right {
+    float: left;
+}
+
+/* --- Game list lobbies --- */
+html[dir="rtl"] .gamelist_lobby {
+    float: right;
+}
+
+html[dir="rtl"] .gamelist_lobby_left {
+    float: right;
+}
+
+html[dir="rtl"] .gamelist_lobby_right {
+    float: left;
+}
+
+html[dir="rtl"] .gamelist_lobby_status {
+    float: left;
+}
+
+/* --- In-game top bar buttons --- */
+html[dir="rtl"] .game_menu_bar {
+    float: left;
+}
+
+/* --- Game playfield: left/right side panels --- */
+html[dir="rtl"] .game_black_card_wrapper {
+    float: right;
+}
+
+html[dir="rtl"] .confirm_card {
+    float: right;
+}
+
+html[dir="rtl"] .game_left_side {
+    float: right;
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+html[dir="rtl"] .game_right_side,
+html[dir="rtl"] .game_options {
+    left: auto;
+    right: 246px;
+}
+
+/* --- Card metadata (DRAW / PICK labels on black cards) --- */
+html[dir="rtl"] .card_metadata {
+    right: auto;
+    left: 15px;
+}
+
+html[dir="rtl"] .draw,
+html[dir="rtl"] .pick {
+    float: left;
+}
+
+/* --- Scoreboard --- */
+html[dir="rtl"] .scorecard_status {
+    float: left;
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+/* --- Card holders and binders --- */
+html[dir="rtl"] .card_holder {
+    float: right;
+    margin-right: 0;
+    margin-left: 2px;
+}
+
+html[dir="rtl"] .game_white_cards_binder {
+    margin-right: 0;
+    margin-left: 4px;
+}
+
+html[dir="rtl"] .game_white_cards_binder .card_holder {
+    margin-left: 0;
+}
+
+/* --- Card logo text (on face-up cards) --- */
+html[dir="rtl"] .logo_text {
+    left: auto;
+    right: 45px;
+}
+
+/* --- Misc spacing overrides --- */
+html[dir="rtl"] .card_set_label {
+    margin-right: 0;
+    margin-left: 15px;
+}
+
+html[dir="rtl"] .checkbox {
+    margin-right: 0;
+    margin-left: 4px;
+}
+
+html[dir="rtl"] #tweetbox {
+    float: left;
+}

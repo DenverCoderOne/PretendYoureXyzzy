@@ -79,11 +79,14 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
     <script type="text/javascript" src="js/cah.ajax.builder.js"></script>
     <script type="text/javascript" src="js/cah.ajax.handlers.js"></script>
     <script type="text/javascript" src="js/cah.app.js"></script>
+    <script type="text/javascript" src="js/cah.i18n.js"></script>
     <link rel="stylesheet" type="text/css" href="cah.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="jquery-ui.min.css" media="screen"/>
     <jsp:include page="analytics.jsp"/>
 </head>
 <body id="gamebody">
+
+<button id="lang_toggle" onclick="cah.I18n.toggle()" title="Switch language / החלף שפה">עברית</button>
 
 <div id="welcome">
   <h1 tabindex="0">
@@ -91,27 +94,28 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
     title="Xyzzy is an Artificial Unintelligence bot. You'll be making more sense than him in this game.">
     Xyzzy</dfn>
   </h1>
-  <h3>A <a href="http://cardsagainsthumanity.com/">Cards Against Humanity</a> clone.</h3>
-  <p>
+  <h3 data-i18n-html="tagline">A <a href="http://cardsagainsthumanity.com/">Cards Against Humanity</a> clone.</h3>
+  <p data-i18n-html="ip_logging_notice">
     Your computer's IP address will <strong>always</strong> be logged when you load the game client.
     It is not tied in any way to your username, except possibly if a server error occurs. Gameplay
     results are logged permanently, but without information identifying you.
   </p>
   <div id="nickbox">
-    <label for="nickname">Nickname:</label>
+    <label for="nickname" data-i18n="nickname_label">Nickname:</label>
     <input type="text" id="nickname" value="" maxlength="30" role="textbox"
         aria-label="Enter your nickname." data-lpignore="true" />
     <label for="idcode">
-    <dfn title="Only available via HTTPS. Provide a secret identification code to positively identify yourself in the chat.">
+    <dfn title="Only available via HTTPS. Provide a secret identification code to positively identify yourself in the chat."
+        data-i18n="optional_id_label"
+        data-i18n-title="optional_id_title">
     Optional identification code:</dfn></label>
     <input type="password" id="idcode" value="" maxlength="100" disabled="disabled"
         aria-label="Optionally enter an identification code." />
-    <a href="https://github.com/ajanata/PretendYoureXyzzy/wiki/Identification-Codes">(Help)</a>
-    <input type="button" id="nicknameconfirm" value="Set" />
+    <a href="https://github.com/ajanata/PretendYoureXyzzy/wiki/Identification-Codes" data-i18n="help_link">(Help)</a>
+    <input type="button" id="nicknameconfirm" value="Set" data-i18n-value="btn_set" />
     <span id="nickbox_error" class="error"></span>
   </div>
-  <p><a href="privacy.html"><strong>Hey, this is important:</strong> Read the privacy page for
-  details about what gameplay information is collected and how it's shared.</a></p>
+  <p><a href="privacy.html"><strong data-i18n="privacy_important">Hey, this is important:</strong> <span data-i18n="privacy_read">Read the privacy page for details about what gameplay information is collected and how it's shared.</span></a></p>
   <p>
     Pretend You're Xyzzy is a Cards Against Humanity clone, which is available at
     <a href="http://www.cardsagainsthumanity.com/">cardsagainsthumanity.com</a>, where you can buy
@@ -128,21 +132,22 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
 <div id="canvas" class="hide">
     <div id="menubar">
         <div id="menubar_left">
-            <input type="button" id="refresh_games" class="hide" value="Refresh Games"/>
-            <input type="button" id="create_game" class="hide" value="Create Game"/>
+            <input type="button" id="refresh_games" class="hide" value="Refresh Games" data-i18n-value="btn_refresh_games"/>
+            <input type="button" id="create_game" class="hide" value="Create Game" data-i18n-value="btn_create_game"/>
             <input type="text" id="filter_games" class="hide" placeholder="Filter games by keyword"
-                   data-lpignore="true"/>
+                   data-i18n-placeholder="filter_games_placeholder" data-lpignore="true"/>
 
-            <input type="button" id="leave_game" class="hide" value="Leave Game"/>
-            <input type="button" id="start_game" class="hide" value="Start Game"/>
-            <input type="button" id="stop_game" class="hide" value="Stop Game"/>
+            <input type="button" id="leave_game" class="hide" value="Leave Game" data-i18n-value="btn_leave_game"/>
+            <input type="button" id="start_game" class="hide" value="Start Game" data-i18n-value="btn_start_game"/>
+            <input type="button" id="stop_game" class="hide" value="Stop Game" data-i18n-value="btn_stop_game"/>
         </div>
         <div id="menubar_right">
-            Current timer duration: <span id="current_timer">0</span> seconds
+            <span data-i18n="timer_label">Current timer duration:</span> <span id="current_timer">0</span> <span data-i18n="timer_seconds">seconds</span>
             <input type="button" id="view_cards" value="View Cards"
                    title="Open a new window to view all cards in the game."
+                   data-i18n-value="btn_view_cards" data-i18n-title="btn_view_cards_title"
                    onclick="window.open('viewcards.jsp', 'viewcards');"/>
-            <input type="button" id="logout" value="Log out"/>
+            <input type="button" id="logout" value="Log out" data-i18n-value="btn_logout"/>
         </div>
     </div>
     <div id="main">
@@ -157,67 +162,79 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
     </div>
     <div id="tabs">
         <ul>
-            <li><a href="#tab-preferences" class="tab-button">User Preferences</a></li>
-            <li><a href="#tab-gamelist-filters" class="tab-button">Game List Filters</a></li>
-            <li><a href="#tab-global" class="tab-button" id="button-global">Global Chat</a></li>
+            <li><a href="#tab-preferences" class="tab-button" data-i18n="tab_preferences">User Preferences</a></li>
+            <li><a href="#tab-gamelist-filters" class="tab-button" data-i18n="tab_gamelist_filters">Game List Filters</a></li>
+            <li><a href="#tab-global" class="tab-button" id="button-global" data-i18n="tab_global_chat">Global Chat</a></li>
         </ul>
         <div id="tab-preferences">
-            <input type="button" value="Save" onclick="cah.Preferences.save();"/>
-            <input type="button" value="Revert" onclick="cah.Preferences.load();"/>
+            <input type="button" value="Save" onclick="cah.Preferences.save();" data-i18n-value="btn_save"/>
+            <input type="button" value="Revert" onclick="cah.Preferences.load();" data-i18n-value="btn_revert"/>
             <label for="hide_connect_quit">
                 <dfn
-                        title="Even with this unselected, you might not see these events if the server is configured to not send them.">
+                        title="Even with this unselected, you might not see these events if the server is configured to not send them."
+                        data-i18n="pref_hide_connect_quit"
+                        data-i18n-title="pref_hide_connect_quit_title">
                     Hide connect and quit events:
                 </dfn>
             </label>
             <input type="checkbox" id="hide_connect_quit"/>
             <br/>
-            <label for="ignore_list">Chat ignore list, one name per line:</label>
+            <label for="ignore_list" data-i18n="pref_chat_ignore">Chat ignore list, one name per line:</label>
             <br/>
             <textarea id="ignore_list" style="width: 200px; height: 150px"></textarea>
             <br/>
             <label for="no_persistent_id">
-                <dfn title="Even with this selected, your card plays for a single session will be tracked.">
+                <dfn title="Even with this selected, your card plays for a single session will be tracked."
+                    data-i18n="pref_no_persistent_id"
+                    data-i18n-title="pref_no_persistent_id_title">
                     Opt-out of card play tracking between sessions:
                 </dfn>
             </label>
             <input type="checkbox" id="no_persistent_id"/>
         </div>
         <div id="tab-gamelist-filters">
-            You will have to click Refresh Games after saving any changes here.
+            <span data-i18n="filter_refresh_note">You will have to click Refresh Games after saving any changes here.</span>
             <div style="text-align: right; width:100%">
-                <input type="button" value="Save" onclick="cah.Preferences.save();"/>
-                <input type="button" value="Revert" onclick="cah.Preferences.load();"/>
+                <input type="button" value="Save" onclick="cah.Preferences.save();" data-i18n-value="btn_save"/>
+                <input type="button" value="Revert" onclick="cah.Preferences.load();" data-i18n-value="btn_revert"/>
             </div>
             <fieldset>
-                <legend>Card set filters</legend>
+                <legend data-i18n="legend_card_set_filters">Card set filters</legend>
                 <div class="cardset_filter_list">
-          <span title="Any game which uses at least one of these card sets will not be shown in the game list.">
+          <span title="Any game which uses at least one of these card sets will not be shown in the game list."
+              data-i18n="filter_do_not_show"
+              data-i18n-title="filter_do_not_show_title">
             Do not show any games with these card sets:
           </span>
                     <select id="cardsets_banned" multiple="multiple"></select>
                     <div class="buttons">
                         <input type="button" id="banned_remove" value="Remove --&gt;"
+                               data-i18n-value="btn_remove_right"
                                onclick="cah.Preferences.transferCardSets('banned', 'neutral')"/>
                     </div>
                 </div>
                 <div class="cardset_filter_list">
-                    <span>Do not require or ban these card sets:</span>
+                    <span data-i18n="filter_neutral">Do not require or ban these card sets:</span>
                     <select id="cardsets_neutral" multiple="multiple"></select>
                     <div class="buttons">
                         <input type="button" id="banned_add" value="&lt;-- Ban"
+                               data-i18n-value="btn_ban"
                                onclick="cah.Preferences.transferCardSets('neutral', 'banned')"/>
                         <input type="button" id="required_add" value="Require --&gt;"
+                               data-i18n-value="btn_require_right"
                                onclick="cah.Preferences.transferCardSets('neutral', 'required')"/>
                     </div>
                 </div>
                 <div class="cardset_filter_list">
-          <span title="Any game that does not use all of these card sets will not be shown in the game list.">
+          <span title="Any game that does not use all of these card sets will not be shown in the game list."
+              data-i18n="filter_only_show"
+              data-i18n-title="filter_only_show_title">
             Only show games with these card sets:
           </span>
                     <select id="cardsets_required" multiple="multiple"></select>
                     <div class="buttons">
                         <input type="button" id="required_remove" value="&lt;-- Remove"
+                               data-i18n-value="btn_remove_left"
                                onclick="cah.Preferences.transferCardSets('required', 'neutral')"/>
                     </div>
                 </div>
@@ -226,8 +243,9 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
         <div id="tab-global">
             <div class="log"></div>
             <input type="text" class="chat" maxlength="200" aria-label="Type here to chat."
+                   data-i18n-placeholder="chat_placeholder" data-i18n-aria="chat_placeholder"
                    data-lpignore="true"/>
-            <input type="button" class="chat_submit" value="Chat"/>
+            <input type="button" class="chat_submit" value="Chat" data-i18n-value="btn_chat"/>
         </div>
     </div>
 </div>
@@ -243,22 +261,22 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
                 <span class="gamelist_lobby_status">status</span>
             </h3>
             <div>
-                <strong>Players:</strong>
+                <strong data-i18n="lobby_players_label">Players:</strong>
                 <span class="gamelist_lobby_players">host, player1, player2</span>
             </div>
             <div>
-                <strong>Spectators:</strong>
+                <strong data-i18n="lobby_spectators_label">Spectators:</strong>
                 <span class="gamelist_lobby_spectators">spectator1</span>
             </div>
-            <div><strong>Goal:</strong> <span class="gamelist_lobby_goal"></span></div>
+            <div><strong data-i18n="lobby_goal_label">Goal:</strong> <span class="gamelist_lobby_goal"></span></div>
             <div>
-                <strong>Cards:</strong> <span class="gamelist_lobby_cardset"></span>
+                <strong data-i18n="lobby_cards_label">Cards:</strong> <span class="gamelist_lobby_cardset"></span>
             </div>
             <div class="hide">Game <span class="gamelist_lobby_id">###</span></div>
         </div>
         <div class="gamelist_lobby_right">
-            <input type="button" class="gamelist_lobby_join" value="Join"/>
-            <input type="button" class="gamelist_lobby_spectate" value="Spectate"/>
+            <input type="button" class="gamelist_lobby_join" value="Join" data-i18n-value="btn_join"/>
+            <input type="button" class="gamelist_lobby_spectate" value="Spectate" data-i18n-value="btn_spectate"/>
         </div>
     </div>
 </div>
@@ -276,13 +294,13 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
                 <br/>
                 <span class="watermark"></span>
             </div>
-            <div class="logo_text">Pretend You're Xyzzy</div>
+            <div class="logo_text" data-i18n="logo_text">Pretend You're Xyzzy</div>
         </div>
         <div class="card_metadata">
-            <div class="draw hide">DRAW
+            <div class="draw hide"><span data-i18n="card_draw">DRAW</span>
                 <div class="card_number"></div>
             </div>
-            <div class="pick hide">PICK
+            <div class="pick hide"><span data-i18n="card_pick">PICK</span>
                 <div class="card_number"></div>
             </div>
         </div>
@@ -308,7 +326,7 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
                 <br/>
                 <span class="watermark"></span>
             </div>
-            <div class="logo_text">Pretend You're Xyzzy</div>
+            <div class="logo_text" data-i18n="logo_text">Pretend You're Xyzzy</div>
         </div>
     </div>
 </div>
@@ -325,36 +343,36 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
     <div id="game_template" class="game">
         <div class="game_top">
             <input type="button" class="game_show_last_round game_menu_bar" value="Show Last Round"
-                   disabled="disabled"/>
-            <input type="button" class="game_show_options game_menu_bar" value="Hide Game Options"/>
+                   data-i18n-value="btn_show_last_round" disabled="disabled"/>
+            <input type="button" class="game_show_options game_menu_bar" value="Hide Game Options" data-i18n-value="btn_hide_game_options"/>
             <label class="game_menu_bar checkbox"><input type="checkbox" class="game_animate_cards"
-                                                         checked="checked"/><span> Animate Cards</span></label>
+                                                         checked="checked"/><span data-i18n="game_animate_cards"> Animate Cards</span></label>
             <div class="game_message" role="status">
-                Waiting for server...
+                <span data-i18n="game_waiting">Waiting for server...</span>
             </div>
         </div>
         <div style="width:100%; height:472px;">
             <div style="width:100%; height:100%;">
                 <div class="game_left_side">
                     <div class="game_black_card_wrapper">
-            <span tabindex="0">The black card for
-                <span class="game_black_card_round_indicator">this round is</span>:
+            <span tabindex="0"><span data-i18n="black_card_for">The black card for</span>
+                <span class="game_black_card_round_indicator" data-i18n="this_round_is">this round is</span>:
             </span>
                         <div class="game_black_card" tabindex="0">
                         </div>
                     </div>
-                    <input type="button" class="confirm_card" value="Confirm Selection"/>
+                    <input type="button" class="confirm_card" value="Confirm Selection" data-i18n-value="btn_confirm_selection"/>
                 </div>
                 <div class="game_options">
                 </div>
                 <div class="game_right_side hide">
                     <div class="game_right_side_box game_white_card_wrapper">
-                        <span tabindex="0">The white cards played this round are:</span>
+                        <span tabindex="0" data-i18n="white_cards_played">The white cards played this round are:</span>
                         <div class="game_white_cards game_right_side_cards">
                         </div>
                     </div>
                     <div class="game_right_side_box game_last_round hide">
-                        The previous round was won by <span class="game_last_round_winner"></span>.
+                        <span data-i18n="prev_round_won_by">The previous round was won by&#160;</span><span class="game_last_round_winner"></span>.
                         <div class="game_last_round_cards game_right_side_cards">
                         </div>
                     </div>
@@ -364,7 +382,7 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
                 <div class="game_hand_filter hide">
                     <span class="game_hand_filter_text"></span>
                 </div>
-                <span class="your_hand" tabindex="0">Your Hand</span>
+                <span class="your_hand" tabindex="0" data-i18n="your_hand">Your Hand</span>
                 <div class="game_hand_cards">
                 </div>
             </div>
@@ -375,7 +393,7 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
 <!-- Template for scoreboard container. Holder for design. -->
 <div style="height: 215px; border: 1px solid black;" class="hide">
     <div id="scoreboard_template" class="scoreboard">
-        <div class="game_message" tabindex="0">Scoreboard</div>
+        <div class="game_message" tabindex="0" data-i18n="scoreboard_title">Scoreboard</div>
     </div>
 </div>
 
@@ -384,8 +402,8 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
     <div id="scorecard_template" class="scorecard" tabindex="0">
         <span class="scorecard_player">PlayerName</span>
         <div class="clear"></div>
-        <span class="scorecard_points"><span class="scorecard_score">0</span> <span class="scorecard_point_title">Awesome Point<span
-                class="scorecard_s">s</span></span></span>
+        <span class="scorecard_points"><span class="scorecard_score">0</span> <span class="scorecard_point_title" data-i18n="awesome_point_title">Awesome Point<span
+                class="scorecard_s" data-i18n="awesome_point_plural">s</span></span></span>
         <span class="scorecard_status">Status</span>
     </div>
 </div>
@@ -399,8 +417,8 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
 <!-- Previous round display. -->
 <div class="hide">
     <div id="previous_round_template" class="previous_round">
-        <input type="button" class="previous_round_close" value="Close"/>
-        Round winner: <span class="previous_round_winner"></span>
+        <input type="button" class="previous_round_close" value="Close" data-i18n-value="btn_close"/>
+        <span data-i18n="round_winner_label">Round winner:&#160;</span><span class="previous_round_winner"></span>
         <div class="previous_round_cards"></div>
     </div>
 </div>
@@ -408,11 +426,11 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
 <!-- Template for game options. -->
 <div class="hide">
   <div class="game_options" id="game_options_template">
-    <span class="options_host_only">Only the game host can change options.</span>
+    <span class="options_host_only" data-i18n="options_host_only">Only the game host can change options.</span>
     <br/><br/>
     <fieldset>
-      <legend>Game options:</legend>
-      <label id="score_limit_template_label" for="score_limit_template">Score limit:</label>
+      <legend data-i18n="legend_game_options">Game options:</legend>
+      <label id="score_limit_template_label" for="score_limit_template" data-i18n="score_limit_label">Score limit:</label>
       <select id="score_limit_template" class="score_limit">
         <%
           for (int i = injector.getInstance(Key.get(Integer.class, MinScoreLimit.class)); i <= injector.getInstance(Key.get(Integer.class, MaxScoreLimit.class)); i++) {
@@ -421,7 +439,7 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
         <% } %>
       </select>
       <br/>
-      <label id="player_limit_template_label" for="player_limit_template">Player limit:</label>
+      <label id="player_limit_template_label" for="player_limit_template" data-i18n="player_limit_label">Player limit:</label>
       <select id="player_limit_template" class="player_limit"
           aria-label="Player limit. Having more than 10 players may cause issues both for screen readers and traditional browsers.">
         <%
@@ -430,9 +448,9 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
           <option <%= i == injector.getInstance(Key.get(Integer.class, DefaultPlayerLimit.class)) ? "selected='selected' " : "" %>value="<%= i %>"><%= i %></option>
         <% } %>
       </select>
-      Having more than 10 players may get cramped!
+      <span data-i18n="player_limit_note">Having more than 10 players may get cramped!</span>
       <br/>
-      <label id="spectator_limit_template_label" for="spectator_limit_template">Spectator limit:</label>
+      <label id="spectator_limit_template_label" for="spectator_limit_template" data-i18n="spectator_limit_label">Spectator limit:</label>
       <select id="spectator_limit_template" class="spectator_limit"
           aria-label="Spectator limit.">
         <%
@@ -441,11 +459,11 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
           <option <%= i == injector.getInstance(Key.get(Integer.class, DefaultSpectatorLimit.class)) ? "selected='selected' " : "" %>value="<%= i %>"><%= i %></option>
         <% } %>
       </select>
-      Spectators can watch and chat, but not actually play. Not even as Czar.
+      <span data-i18n="spectator_note">Spectators can watch and chat, but not actually play. Not even as Czar.</span>
       <br/>
       <label id="timer_multiplier_template_label" for="timer_multiplier_template"
           title="Players will be skipped if they have not played within a reasonable amount of time. This is the multiplier to apply to the default timeouts, or Unlimited to disable timeouts.">
-          Idle timer multiplier:
+          <span data-i18n="timer_multiplier_label">Idle timer multiplier:</span>
       </label>
       <select id="timer_multiplier_template" class="timer_multiplier"
           title="Players will be skipped if they have not played within a reasonable amount of time. This is the multiplier to apply to the default timeouts, or Unlimited to disable timeouts."
@@ -463,27 +481,27 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
       	<option value="4x">4x</option>
       	<option value="5x">5x</option>
       	<option value="10x">10x</option>
-      	<option value="Unlimited">Unlimited</option>
+      	<option value="Unlimited" data-i18n="timer_unlimited">Unlimited</option>
       </select>
       <br/>
       <div style="display: flex">
         <fieldset class="card_sets">
-          <legend>Card Sets</legend>
+          <legend data-i18n="legend_card_sets">Card Sets</legend>
           <span class="base_card_sets"></span>
           <span class="extra_card_sets"></span>
         </fieldset>
         <% if (customDecksEnabled) { %>
           <fieldset>
-            <legend>Custom Card Sets</legend>
+            <legend data-i18n="legend_custom_card_sets">Custom Card Sets</legend>
             <% if (showAddCustomDeckJson) { %>
-              <input type="button" class="add_custom_deck_json skip_changed" value="Upload JSON"/>
+              <input type="button" class="add_custom_deck_json skip_changed" value="Upload JSON" data-i18n-value="btn_upload_json"/>
             <% } %>
 
             <% if (showAddCustomDeckUrl) { %>
-              <input type="button" class="add_custom_deck_url skip_changed" value="Download from URL"/>
+              <input type="button" class="add_custom_deck_url skip_changed" value="Download from URL" data-i18n-value="btn_download_url"/>
             <% } %>
 
-            <input type="button" class="remove_selected_custom_deck skip_changed" value="Removed selected"/>
+            <input type="button" class="remove_selected_custom_deck skip_changed" value="Remove selected" data-i18n-value="btn_remove_selected"/>
             <select class="custom_decks_list skip_changed" multiple="multiple">
             </select>
         </fieldset>
@@ -492,30 +510,34 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
       <% if (allowBlankCards) { %>
         <br/>
         <label id="blanks_limit_label" title="Blank cards allow a player to type in their own answer.">
-          Also include <select id="blanks_limit_template" class="blanks_limit">
+          <span data-i18n="blank_cards_include">Also include</span> <select id="blanks_limit_template" class="blanks_limit">
           <%
             for (int i = injector.getInstance(Key.get(Integer.class, MinBlankCardLimit.class)); i <= injector.getInstance(Key.get(Integer.class, MaxBlankCardLimit.class)); i++) {
           %>
             <option <%= i == injector.getInstance(Key.get(Integer.class, DefaultBlankCardLimit.class)) ? "selected='selected' " : "" %>value="<%= i %>"><%= i %></option>
           <% } %>
-          </select> blank white cards.
+          </select> <span data-i18n="blank_cards_suffix">blank white cards.</span>
         </label>
       <% } %>
       <br/>
-      <label id="game_password_template_label" for="game_password_template">Game password:</label>
+      <label id="game_password_template_label" for="game_password_template" data-i18n="game_password_label">Game password:</label>
       <input type="text" id="game_password_template" class="game_password"
           aria-label="Game password. You must tab outside of the box to apply the password."/>
       <input type="password" id="game_fake_password_template" class="game_fake_password hide" />
-      You must click outside the box to apply the password.
+      <span data-i18n="password_apply_note">You must click outside the box to apply the password.</span>
       <input type="checkbox" id="game_hide_password_template" class="game_hide_password" />
       <label id="game_hide_password_template_label" for="game_hide_password_template"
           aria-label="Hide password from your screen."
-          title="Hides the password from your screen, so people watching your stream can't see it.">
+          title="Hides the password from your screen, so people watching your stream can't see it."
+          data-i18n="btn_hide_password">
         Hide password.
       </label>
     </fieldset>
   </div>
 </div>
 <div style="position:absolute; left:-99999px" role="alert" id="aria-notifications"></div>
+<script type="text/javascript">
+  $(document).ready(function() { cah.I18n.init(); });
+</script>
 </body>
 </html>

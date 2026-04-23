@@ -36,15 +36,20 @@ to, for instance, display the number of connected players.
     <title>Pretend You're Xyzzy</title>
     <jsp:include page="analytics.jsp"/>
     <link rel="stylesheet" type="text/css" href="cah.css" media="screen"/>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/cah.i18n.js"></script>
 </head>
 <body>
+<button id="lang_toggle" onclick="cah.I18n.toggle()" title="Switch language / החלף שפה">עברית</button>
 <h1>
-    Pretend You're <dfn style="border-bottom: 1px dotted black"
-                        title="Xyzzy is an Artificial Unintelligence bot. You'll be making more sense than him in this game.">
+    <span data-i18n="pretend_youre">Pretend You're</span> <dfn style="border-bottom: 1px dotted black"
+                        title="Xyzzy is an Artificial Unintelligence bot. You'll be making more sense than him in this game."
+                        data-i18n-title="xyzzy_dfn_title">
     Xyzzy</dfn>
 </h1>
-<h3>A Cards Against Humanity clone.</h3>
-<p>
+<h3 data-i18n-html="tagline">A Cards Against Humanity clone.</h3>
+<p data-i18n-html="ip_logging_notice">
   Your computer's IP address will <strong>always</strong> be logged when you load the game client.
   It is not tied in any way to your username, except possibly if a server error occurs. Gameplay
   results are logged permanently, but without information identifying you.
@@ -57,6 +62,7 @@ to, for instance, display the number of connected players.
 </p>
 <p>
     <input type="button" value="I have read the above; Take me to the game!"
+           data-i18n-value="btn_go_to_game"
            onclick="window.location='game.jsp';"/>
 </p>
 <p>
@@ -70,5 +76,8 @@ to, for instance, display the number of connected players.
     information, including information about included libraries, see the
     <a href="license.html">full license information</a>.
 </p>
+<script type="text/javascript">
+  $(document).ready(function() { cah.I18n.init(); });
+</script>
 </body>
 </html>
