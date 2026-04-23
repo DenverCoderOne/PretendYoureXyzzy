@@ -11,8 +11,8 @@
     <name>pyx</name>
 
     <scm>
-        <url>https://github.com/devgianlu/PretendYoureXyzzy</url>
-        <connection>scm:git:ssh://git@github.com/devgianlu/PretendYoureXyzzy.git</connection>
+        <url>https://github.com/DenverCoderOne/PretendYoureXyzzy</url>
+        <connection>scm:git:ssh://git@github.com/DenverCoderOne/PretendYoureXyzzy.git</connection>
     </scm>
 
     <properties>
@@ -31,6 +31,11 @@
             <id>devgianlu</id>
             <name>Gianluca Altomani</name>
             <email>altomanigianluca@gmail.com</email>
+        </developer>
+        <developer>
+            <id>DenverCoderOne</id>
+            <name>Jonah Lawrence</name>
+            <email>jonah@freshidea.com</email>
         </developer>
     </developers>
 

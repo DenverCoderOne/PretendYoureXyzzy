@@ -148,7 +148,9 @@
       /* --- index.jsp specific --- */
       pretend_youre:                'Pretend You\'re',
       xyzzy_dfn_title:              'Xyzzy is an Artificial Unintelligence bot. You\'ll be making more sense than him in this game.',
-      btn_go_to_game:               'I have read the above; Take me to the game!'
+      btn_go_to_game:               'I have read the above; Take me to the game!',
+      weird_state_note:             'If the game seems to be in a weird state, refresh the page and it should take you back to where you were. It would be helpful to take a screenshot and include it in a <a href="https://github.com/DenverCoderOne/PretendYoureXyzzy/issues/new">new bug on GitHub</a> along with a general description of the problem and the time that it happened (include a time zone please!).',
+      cah_clone_note:               'Pretend You\'re Xyzzy is a Cards Against Humanity clone, which is available at <a href="http://www.cardsagainsthumanity.com/">cardsagainsthumanity.com</a>, where you can buy it or download and print it out yourself. It is distributed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons - Attribution - Noncommercial - Share Alike license</a>. This web version is in no way endorsed or sponsored by cardsagainsthumanity.com. You may download the source code to this version from <a href="https://github.com/DenverCoderOne/PretendYoureXyzzy">GitHub</a>. For full license information, including information about included libraries, see the <a href="license.html">full license information</a>.'
     },
 
     he: {
@@ -275,7 +277,9 @@
       /* --- index.jsp specific --- */
       pretend_youre:                'התחזה ל',
       xyzzy_dfn_title:              'קסיזי הוא בוט בינה מלאכותית עליולתי. תהיה הגיוני יותר ממנו.',
-      btn_go_to_game:               'קראתי את הנדרש; קח אותי למשחק!'
+      btn_go_to_game:               'קראתי את הנדרש; קח אותי למשחק!',
+      weird_state_note:             'אם המשחק נראה במצב מוזר, רענן את הדף ותחזור למקום שבו היית. יהיה מועיל לצלם צילום מסך ולצרף אותו ל<a href="https://github.com/DenverCoderOne/PretendYoureXyzzy/issues/new">באג חדש ב-GitHub</a> יחד עם תיאור כללי של הבעיה ושעת האירוע (בבקשה כלול אזור זמן!).',
+      cah_clone_note:               'Pretend You\'re Xyzzy הוא שיבוט של Cards Against Humanity, הזמין ב-<a href="http://www.cardsagainsthumanity.com/">cardsagainsthumanity.com</a>, שם אפשר לקנות אותו או להוריד ולהדפיס בעצמך. הוא מופץ תחת רישיון <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons - ייחוס - לא מסחרי - שיתוף זהה</a>. גרסת האינטרנט הזו אינה מאושרת או ממומנת בשום אופן על ידי cardsagainsthumanity.com. ניתן להוריד את קוד המקור לגרסה זו מ-<a href="https://github.com/DenverCoderOne/PretendYoureXyzzy">GitHub</a>. למידע מלא על רישיונות, כולל מידע על ספריות נכללות, ראה את <a href="license.html">מידע הרישיון המלא</a>.'
     }
   };
 

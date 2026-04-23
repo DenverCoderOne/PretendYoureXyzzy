@@ -54,10 +54,10 @@ to, for instance, display the number of connected players.
   It is not tied in any way to your username, except possibly if a server error occurs. Gameplay
   results are logged permanently, but without information identifying you.
 </p>
-<p>
+<p data-i18n-html="weird_state_note">
     If the game seems to be in a weird state, refresh the page and it should take you back to where
     you were. It would be helpful to take a screenshot and include it in a
-    <a href="https://github.com/devgianlu/PretendYoureXyzzy/issues/new">new bug on GitHub</a> along with
+    <a href="https://github.com/DenverCoderOne/PretendYoureXyzzy/issues/new">new bug on GitHub</a> along with
     a general description of the problem and the time that it happened (include a time zone please!).
 </p>
 <p>
@@ -65,14 +65,14 @@ to, for instance, display the number of connected players.
            data-i18n-value="btn_go_to_game"
            onclick="window.location='game.jsp';"/>
 </p>
-<p>
+<p data-i18n-html="cah_clone_note">
     Pretend You're Xyzzy is a Cards Against Humanity clone, which is available at
     <a href="http://www.cardsagainsthumanity.com/">cardsagainsthumanity.com</a>, where you can buy it
     or download and print it out yourself. It is distributed under a
     <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons - Attribution -
         Noncommercial - Share Alike license</a>. This web version is in no way endorsed or sponsored by
     cardsagainsthumanity.com. You may download the source code to this version from
-    <a href="https://github.com/devgianlu/PretendYoureXyzzy">GitHub</a>. For full license
+    <a href="https://github.com/DenverCoderOne/PretendYoureXyzzy">GitHub</a>. For full license
     information, including information about included libraries, see the
     <a href="license.html">full license information</a>.
 </p>

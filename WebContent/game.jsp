@@ -116,14 +116,14 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
     <span id="nickbox_error" class="error"></span>
   </div>
   <p><a href="privacy.html"><strong data-i18n="privacy_important">Hey, this is important:</strong> <span data-i18n="privacy_read">Read the privacy page for details about what gameplay information is collected and how it's shared.</span></a></p>
-  <p>
+  <p data-i18n-html="cah_clone_note">
     Pretend You're Xyzzy is a Cards Against Humanity clone, which is available at
     <a href="http://www.cardsagainsthumanity.com/">cardsagainsthumanity.com</a>, where you can buy
     it or download and print it out yourself. It is distributed under a
     <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons - Attribution -
     Noncommercial - Share Alike license</a>. This web version is in no way endorsed or sponsored by
     cardsagainsthumanity.com. You may download the source code to this version from
-    <a href="https://github.com/devgianlu/PretendYoureXyzzy">GitHub</a>. For full license
+    <a href="https://github.com/DenverCoderOne/PretendYoureXyzzy">GitHub</a>. For full license
     information, including information about included libraries, see the
     <a href="license.html">full license information</a>.
   </p>
