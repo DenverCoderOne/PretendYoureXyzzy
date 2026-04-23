@@ -36,7 +36,7 @@ to, for instance, display the number of connected players.
     <title>Pretend You're Xyzzy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=DM+Serif+Display&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Assistant:wght@400;600&display=swap"/>
     <jsp:include page="analytics.jsp"/>
     <link rel="stylesheet" type="text/css" href="cah.css" media="screen"/>
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>

@@ -57,7 +57,7 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
     <title>Pretend You're Xyzzy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=DM+Serif+Display&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Assistant:wght@400;600&display=swap"/>
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/jquery-migrate-1.2.1.js"></script>
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
@@ -504,6 +504,9 @@ boolean showAddCustomDeckJson = injector.getInstance(Key.get(new TypeLiteral<Boo
             <% if (showAddCustomDeckUrl) { %>
               <input type="button" class="add_custom_deck_url skip_changed" value="Download from URL" data-i18n-value="btn_download_url"/>
             <% } %>
+
+            <input type="button" class="add_preset_deck_en skip_changed" value="Bitul Torah &#x2013; English" title="Load from bitultorah.com/pyx?lang=en"/>
+            <input type="button" class="add_preset_deck_he skip_changed" value="ביטול תורה &#x2013; עברית" title="Load from bitultorah.com/pyx?lang=he"/>
 
             <input type="button" class="remove_selected_custom_deck skip_changed" value="Remove selected" data-i18n-value="btn_remove_selected"/>
             <select class="custom_decks_list skip_changed" multiple="multiple">

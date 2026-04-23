@@ -136,7 +136,7 @@ Interface to view and search all existing cards and card sets.
     <title>Pretend You're Xyzzy: View Cards</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=DM+Serif+Display&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Assistant:wght@400;600&display=swap"/>
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/jquery-migrate-1.2.1.js"></script>
     <script type="text/javascript" src="js/jquery.cookie.js"></script>

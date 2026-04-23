@@ -317,6 +317,8 @@ cah.Game = function (id) {
     $(".game_show_options", this.element_).click(cah.bind(this, this.showOptionsClick_));
     $(".add_custom_deck_json", this.element_).click(cah.bind(this, this.addCustomDeckJson_));
     $(".add_custom_deck_url", this.element_).click(cah.bind(this, this.addCustomDeckUrl_));
+    $(".add_preset_deck_en", this.element_).click(cah.bind(this, this.addPresetDeckEn_));
+    $(".add_preset_deck_he", this.element_).click(cah.bind(this, this.addPresetDeckHe_));
     $(".remove_selected_custom_deck", this.element_).click(cah.bind(this, this.removeSelectedCustomDeck_));
     $("select:not(.skip_changed)", this.optionsElement_).change(cah.bind(this, this.optionChanged_));
     $("input:not(.skip_changed)", this.optionsElement_).blur(cah.bind(this, this.optionChanged_));
@@ -1451,6 +1453,24 @@ cah.Game.prototype.addCustomDeckUrl_ = function (e) {
     if (url.length == 0) return;
 
     cah.Ajax.build(cah.$.AjaxOperation.ADD_CARDSET).withGameId(this.id_).withCustomDeckUrl(url).run();
+};
+
+/**
+ * Load preset deck: Bitul Torah English.
+ * @private
+ */
+cah.Game.prototype.addPresetDeckEn_ = function (e) {
+    cah.Ajax.build(cah.$.AjaxOperation.ADD_CARDSET).withGameId(this.id_)
+        .withCustomDeckUrl("https://bitultorah.com/pyx?lang=en").run();
+};
+
+/**
+ * Load preset deck: Bitul Torah Hebrew.
+ * @private
+ */
+cah.Game.prototype.addPresetDeckHe_ = function (e) {
+    cah.Ajax.build(cah.$.AjaxOperation.ADD_CARDSET).withGameId(this.id_)
+        .withCustomDeckUrl("https://bitultorah.com/pyx?lang=he").run();
 };
 
 /**
