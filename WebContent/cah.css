@@ -27,18 +27,26 @@
 
 body {
     min-height: 640px;
-    background: #eee;
-    color: #000;
+    background: #f0f2f5;
+    color: #1a1a2e;
     font-size: 12px;
+    font-family: 'Inter', 'Helvetica Neue', helvetica, Arial, sans-serif;
     margin: 0;
 }
 
-.card, #game_list {
-    font-family: "helvetica neue", helvetica, Arial, sans-serif;
+.card,
+#game_list {
+    font-family: 'Inter', 'Helvetica Neue', helvetica, Arial, sans-serif;
 }
 
-h2, h3, h4 {
-    margin: 0 0 .25em;
+.card .card_text {
+    font-family: 'DM Serif Display', Georgia, serif;
+}
+
+h2,
+h3,
+h4 {
+    margin: 0 0 0.25em;
 }
 
 /*
@@ -72,11 +80,11 @@ h2, h3, h4 {
 */
 
 #menubar {
-    background: #555;
-    border-bottom: 1px solid #333;
-    color: #fff;
+    background: #2d3748;
+    border-bottom: 1px solid #1a202c;
+    color: #e2e8f0;
     height: 25px;
-    padding: .5em;
+    padding: 0.5em;
 }
 
 #menubar_left {
@@ -102,7 +110,7 @@ h2, h3, h4 {
 
 #main {
     height: 506px;
-    padding: .5em;
+    padding: 0.5em;
 }
 
 #welcome {
@@ -116,19 +124,20 @@ h2, h3, h4 {
 }
 
 .gamelist_lobby {
-    background: #fff;
-    border-radius: .25em;
+    background: #ffffff;
+    border-radius: 0.4em;
     width: 575px;
     height: 175px;
     float: left;
-    border: 1px solid #ccc;
+    border: 1px solid #e2e8f0;
     margin: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
 }
 
 .gamelist_lobby_left {
     width: 77%;
     height: 100%;
-    padding: .5em 1.5%;
+    padding: 0.5em 1.5%;
     float: left;
 }
 
@@ -141,22 +150,36 @@ h2, h3, h4 {
 .gamelist_lobby_join {
     width: 100%;
     height: 75%;
-    border: 1px solid #aaa;
-    background: linear-gradient(#fff, #ddd) #ddd;
-    border-radius: .25em;
+    border: none;
+    background: #3b82f6;
+    color: #fff;
+    border-radius: 0.4em;
     text-transform: uppercase;
     font-weight: 700;
     white-space: normal;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.gamelist_lobby_join:hover {
+    background: #2563eb;
 }
 
 .gamelist_lobby_spectate {
     width: 100%;
     height: 25%;
-    border: 1px solid #aaa;
-    background: linear-gradient(#fff, #ddd) #ddd;
-    border-radius: .25em;
+    border: none;
+    background: #64748b;
+    color: #fff;
+    border-radius: 0.4em;
     text-transform: uppercase;
     font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.gamelist_lobby_spectate:hover {
+    background: #475569;
 }
 
 .gamelist_lobby_status {
@@ -165,11 +188,11 @@ h2, h3, h4 {
 }
 
 .gamelist_lobby_status_joinable {
-    color: green;
+    color: #16a34a;
 }
 
 .gamelist_lobby_status_unjoinable {
-    color: #c0c0c0;
+    color: #94a3b8;
 }
 
 #bottom {
@@ -186,7 +209,7 @@ h2, h3, h4 {
     position: absolute;
     bottom: 0;
     min-height: 100px;
-    border: 1px solid #999;
+    border: 1px solid #cbd5e1;
 }
 
 #tabs {
@@ -201,6 +224,89 @@ h2, h3, h4 {
 
 #tabs .ui-widget {
     line-height: 16px !important;
+}
+
+/* ── Flat button base ── */
+input[type="button"],
+button {
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 0.35em;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.15s,
+        box-shadow 0.15s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    outline: none;
+    padding: 0.5em 1em;
+    margin: 0.2em;
+}
+
+input[type="button"]:hover,
+button:hover {
+    background: #2563eb;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+}
+
+input[type="button"]:active,
+button:active {
+    background: #1d4ed8;
+    box-shadow: none;
+}
+
+input[type="button"]:disabled,
+button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Secondary: Revert, View Cards, Spectate, Refresh */
+#logout,
+#view_cards,
+#refresh_games {
+    background: #64748b;
+}
+
+#logout:hover,
+#view_cards:hover,
+#refresh_games:hover {
+    background: #475569;
+}
+
+/* Destructive: Leave / Stop */
+#leave_game,
+#stop_game {
+    background: #ef4444;
+}
+
+#leave_game:hover,
+#stop_game:hover {
+    background: #dc2626;
+}
+
+/* Success: Start Game */
+#start_game {
+    background: #16a34a;
+}
+
+#start_game:hover {
+    background: #15803d;
+}
+
+/* Lang toggle fits in the menubar */
+.lang_toggle {
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: #e2e8f0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: none !important;
+}
+
+.lang_toggle:hover {
+    background: rgba(255, 255, 255, 0.22) !important;
 }
 
 .tab-button {
@@ -229,7 +335,7 @@ h2, h3, h4 {
     width: 100%;
     height: 198px;
     border-style: none solid solid none;
-    border-color: black;
+    border-color: #cbd5e1;
     border-width: 1px;
     position: absolute;
     bottom: 18px;
@@ -238,18 +344,20 @@ h2, h3, h4 {
     min-height: 43px;
     font-size: 16px;
     font-family: serif;
+    background: #ffffff;
 }
 
-#tab-preferences input[type='button'] {
+#tab-preferences input[type="button"] {
     float: right;
 }
 
-#tab-preferences, #tab-gamelist-filters {
+#tab-preferences,
+#tab-gamelist-filters {
     overflow-y: auto;
 }
 
 .chat {
-    border: 1px solid black;
+    border: 1px solid #cbd5e1;
     left: -1px;
     bottom: 0;
     height: 17px;
@@ -258,6 +366,8 @@ h2, h3, h4 {
     width: 90%;
     font-family: serif;
     font-size: 12pt;
+    background: #f8fafc;
+    color: #1a1a2e;
 }
 
 .chat_submit {
@@ -269,25 +379,36 @@ h2, h3, h4 {
     margin: 0;
     padding: 0;
     font-size: 14px;
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.chat_submit:hover {
+    background: #2563eb;
 }
 
 span.error {
-    color: red;
+    color: #dc2626;
 }
 
-span.debug, span.admin {
-    color: blue;
+span.debug,
+span.admin {
+    color: #2563eb;
 }
 
 .card {
     position: relative;
     width: 200px;
     height: 200px;
-    border: 1px solid #999;
+    border: 1px solid #d1d5db;
     padding: 15px;
     font-size: 15pt;
     float: left;
-    border-radius: .25em;
+    border-radius: 0.4em;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -297,17 +418,19 @@ span.debug, span.admin {
 }
 
 .blackcard {
-    color: white;
-    background: #231f20 linear-gradient(#231f20, #231f20 75%, #333);
+    color: #f8fafc;
+    background: #231f20;
+    border-color: #0f172a;
 }
 
 .whitecard {
-    background: white;
+    background: #ffffff;
     color: #231f20;
 }
 
-.whitecard, .gamelist_lobby {
-    background-image: linear-gradient(#fff, #fff 75%, #f8f8f8);
+.whitecard,
+.gamelist_lobby {
+    background-image: none;
 }
 
 .cah {
@@ -344,7 +467,7 @@ span.debug, span.admin {
 .game_hand_filter {
     height: 100%;
     position: relative;
-    background: rgba(192, 192, 192, .5);
+    background: rgba(148, 163, 184, 0.45);
     z-index: 100;
     text-align: center;
 }
@@ -354,8 +477,10 @@ span.debug, span.admin {
     top: 50%;
     font-size: 300%;
     margin-top: -30px;
-    background: #eee;
-    padding: .25em;
+    background: #e2e8f0;
+    color: #334155;
+    padding: 0.25em;
+    border-radius: 0.25em;
 }
 
 .game_hand_cards {
@@ -409,14 +534,17 @@ span.debug, span.admin {
     padding-top: 10px;
 }
 
-.game_right_side, .game_options {
+.game_right_side,
+.game_options {
     position: absolute;
     left: 246px;
     width: 75%;
 }
 
 .game_options {
-    background: #eee;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.4em;
     z-index: 500;
 }
 
@@ -438,16 +566,17 @@ span.debug, span.admin {
     z-index: 200;
 }
 
-.game_right_side_cards .card_holder, .game_white_cards_binder {
+.game_right_side_cards .card_holder,
+.game_white_cards_binder {
     z-index: 200;
 }
 
 .game_white_cards_binder {
-    border: 3px solid silver;
+    border: 3px solid #94a3b8;
     display: inline-block;
     margin-right: 4px;
     margin-bottom: 4px;
-    border-radius: .25em;
+    border-radius: 0.4em;
 }
 
 .card_holder {
@@ -471,15 +600,15 @@ span.debug, span.admin {
 }
 
 .scorecard {
-    background: #fff;
+    background: #ffffff;
     height: 36px;
-    padding: .25em .5em;
-    border-bottom: 1px solid #bbb;
+    padding: 0.25em 0.5em;
+    border-bottom: 1px solid #e2e8f0;
     font-size: 11pt;
 }
 
 .scorecard:nth-child(even) {
-    background: #f8f8f8;
+    background: #f8fafc;
 }
 
 .scorecard_status {
@@ -493,7 +622,7 @@ span.debug, span.admin {
 
 .selected {
     color: #fff;
-    background: #3c7fb1 !important;
+    background: #3b82f6 !important;
 }
 
 .logo {
@@ -520,11 +649,11 @@ span.debug, span.admin {
 }
 
 .blackcard .logo_1 {
-    background: #57585a;
+    background: #475569;
 }
 
 .whitecard .logo_1 {
-    background: #231f20;
+    background: #1e293b;
 }
 
 .logo_2 {
@@ -532,11 +661,11 @@ span.debug, span.admin {
 }
 
 .blackcard .logo_2 {
-    background: #b2b3b7;
+    background: #94a3b8;
 }
 
 .whitecard .logo_2 {
-    background: #636366;
+    background: #64748b;
 }
 
 .logo_3 {
@@ -545,13 +674,13 @@ span.debug, span.admin {
 }
 
 .blackcard .logo_3 {
-    background: white;
-    color: black;
+    background: #f1f5f9;
+    color: #1e293b;
 }
 
 .whitecard .logo_3 {
-    background: #c7c8ca;
-    color: black;
+    background: #cbd5e1;
+    color: #1e293b;
 }
 
 .watermark_container {
@@ -573,7 +702,8 @@ span.debug, span.admin {
     bottom: 15px;
 }
 
-.draw, .pick {
+.draw,
+.pick {
     float: right;
     clear: both;
     font-weight: bold;
@@ -601,7 +731,10 @@ span.debug, span.admin {
 
 .previous_round {
     z-index: 50;
-    border: 3px solid black;
+    border: 3px solid #334155;
+    background: #f8fafc;
+    border-radius: 0.4em;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     width: 60%;
     height: 60%;
     position: absolute;
@@ -619,7 +752,8 @@ span.debug, span.admin {
     margin-right: 15px;
 }
 
-.scorecard_score, .scorecard_player {
+.scorecard_score,
+.scorecard_player {
     font-weight: 700;
 }
 
@@ -784,4 +918,9 @@ html[dir="rtl"] .checkbox {
 
 html[dir="rtl"] #tweetbox {
     float: left;
+}
+
+html[dir="rtl"] #tabs {
+    right: auto;
+    left: 14px;
 }
