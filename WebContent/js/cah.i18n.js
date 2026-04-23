@@ -242,7 +242,7 @@
 
       /* --- Scoreboard --- */
       scoreboard_title:             'לוח תוצאות',
-      awesome_point_title:          'נקודות',
+      awesome_point_title:          'נקודות זכות',
       awesome_point_plural:         '',
       /* --- Game chat tab --- */
       chat_with_game_members:       'שוחח עם חברי המשחק',
