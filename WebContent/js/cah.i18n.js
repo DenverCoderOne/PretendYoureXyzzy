@@ -398,9 +398,9 @@
           en: { sjj: 'Select a winning card.',  sv: 'You are just spectating.',          sw: 'You have won!',
                 sh: 'Wait for players then click Start Game.',                            si: 'Waiting for players...',
                 sj: 'You are the Judge.',   sp: 'Select a card to play.' },
-          he: { sjj: '.בחר קלף מנצח',           sv: '.אתה רק צופה',                      sw: '!ניצחת',
-                sh: '.המתן לשחקנים ולאחר מכן לחץ על התחל משחק',                          si: '...ממתין לשחקנים',
-                sj: '.אתה הפוסק',                sp: '.בחר קלף לשחק' }
+          he: { sjj: 'בחר קלף מנצח.',           sv: 'אתה רק צופה.',                      sw: 'ניצחת!',
+                sh: 'המתן לשחקנים ולאחר מכן לחץ על התחל משחק.',                          si: 'ממתין לשחקנים...',
+                sj: 'אתה הפוסק.',                sp: 'בחר קלף לשחק.' }
         };
         var sm  = statusMsg[lang]  || statusMsg.en;
         var sm2 = statusMsg2[lang] || statusMsg2.en;
