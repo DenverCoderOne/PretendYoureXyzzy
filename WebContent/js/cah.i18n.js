@@ -153,8 +153,8 @@
 
     he: {
       /* --- Branding / page title --- */
-      page_title:                   'Pretend You\'re Xyzzy',
-      logo_text:                    'Pretend You\'re Xyzzy',
+      page_title:                   'התחזה ל-Xyzzy',
+      logo_text:                    'התחזה ל-Xyzzy',
       tagline:                      'שיבוט של <a href="http://cardsagainsthumanity.com/">קלפים נגד האנושות</a>.',
 
       /* --- Welcome / nickname box --- */
@@ -165,7 +165,7 @@
       btn_set:                      'אישור',
 
       /* --- Privacy notice --- */
-      ip_logging_notice:            'כתובת ה-IP של המחשב שלך תתגרת <strong>תמיד</strong> בעת טעינת לקוח המשחק. היא אינה קשורה בשום אופן לשם המשתמש שלך. תוצאות המשחק נשמרות לצמיתות, אך ללא מידע מזהה אותך.',
+      ip_logging_notice:            'כתובת ה-IP של המחשב שלך <strong>תמיד</strong> תישמר בעת טעינת המשחק. היא לא תקושר בשום אופן לשם המשתמש שלך. תוצאות המשחק נשמרות לצמיתות, אך ללא מידע המזהה אותך.',
       privacy_important:            'חשוב באמת:',
       privacy_read:                 'קרא את דף הפרטייות לפרטים על מידע המשחק שנאסף ואיך הוא משותף.',
 
@@ -191,10 +191,10 @@
       btn_save:                     'שמור',
       btn_revert:                   'בטל שינויים',
       pref_hide_connect_quit:       'הסתר אירועי התחברות ועזיבה:',
-      pref_hide_connect_quit_title: 'גם בללא סימון זה, ייתכן שלא תראה אירועים אלו אם השרת מוגדר לא לשלוח אותם.',
+      pref_hide_connect_quit_title: 'גם ללא סימון זה, ייתכן שלא תראה אירועים אלו אם השרת מוגדר לא לשלוח אותם.',
       pref_chat_ignore:             'רשימת התעלמות בצ\'אט, שם אחד בכל שורה:',
-      pref_no_persistent_id:        'ביטול מעקב אחר משחק קלפים בין סשנים:',
-      pref_no_persistent_id_title:  'גם עם אפשרות זו מסומנת, משחקי קלפים בסשן הנוכחי עדיין יעקבו.',
+      pref_no_persistent_id:        'ביטול מעקב אחר משחק קלפים בין משחקים:',
+      pref_no_persistent_id_title:  'גם עם אפשרות זו מסומנת, עדיין יהיה מעקב אחר הקלפים ששיחקת במשחק הנוכחי.',
 
       /* --- Game list filters tab --- */
       filter_refresh_note:          'יהיה עליך ללחוץ על רענן משחקים לאחר שמירת שינויים.',
@@ -287,8 +287,10 @@
 
     /** Read saved cookie and apply the stored language (or default to English). */
     init: function () {
-      var saved = (typeof $.cookie === 'function') ? $.cookie(COOKIE_KEY) : null;
-      this.apply(saved === 'he' ? 'he' : 'en');
+      var urlParam = new URLSearchParams(window.location.search).get('lang');
+      var saved    = (typeof $.cookie === 'function') ? $.cookie(COOKIE_KEY) : null;
+      var lang     = urlParam || saved;
+      this.apply(lang === 'he' ? 'he' : 'en');
     },
 
     /** Flip between English and Hebrew. */
