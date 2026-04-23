@@ -825,7 +825,7 @@ public class Constants {
     IDLE("si", "", "Waiting for players..."),
     JUDGE("sj", "Judge", "You are the Judge."),
     JUDGING("sjj", "Selecting", "Select a winning card."),
-    PLAYING("sp", "Player", "Select a card to play."),
+    PLAYING("sp", "Playing", "Select a card to play."),
     WINNER("sw", "Winner!", "You have won!"),
     SPECTATOR("sv", "Spectator", "You are just spectating.");
 

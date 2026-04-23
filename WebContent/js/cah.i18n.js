@@ -391,8 +391,8 @@
       /* Override GamePlayerStatus constants for dynamically-set status strings */
       if (window.cah && cah.$ && cah.$.GamePlayerStatus_msg) {
         var statusMsg = {
-          en: { sjj: 'Selecting',   sv: 'Spectator', sw: 'Winner!',  sh: 'Host',   si: '',       sj: 'Judge', sp: 'Player' },
-          he: { sjj: 'בוחר',        sv: 'צופה',       sw: '!מנצח',   sh: 'מארח',   si: '',       sj: 'פוסק',        sp: 'שחקן' }
+          en: { sjj: 'Selecting',   sv: 'Spectator', sw: 'Winner!',  sh: 'Host',   si: '',       sj: 'Judge', sp: 'Playing' },
+          he: { sjj: 'בוחר',        sv: 'צופה',       sw: '!מנצח',   sh: 'מארח',   si: '',       sj: 'פוסק',        sp: 'חושב' }
         };
         var statusMsg2 = {
           en: { sjj: 'Select a winning card.',  sv: 'You are just spectating.',          sw: 'You have won!',

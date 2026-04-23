@@ -22,7 +22,7 @@ var GamePlayerStatusMsgs = map[string]string{
 	 "sh": "Host",
 	 "si": "",
 	 "sj": "Judge",
-	 "sp": "Player",
+	 "sp": "Playing",
 }
 
 var GamePlayerStatusMsgs2 = map[string]string{
