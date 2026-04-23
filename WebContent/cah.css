@@ -95,23 +95,23 @@ h4 {
     padding: 0.5em;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 0.4em;
 }
 
 #menubar_left {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 0.4em;
-    flex: 1 1 0;
+    flex: 1 1 auto;
     min-width: 0;
-    overflow: hidden;
 }
 
 #menubar_right {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 0.4em;
     flex-shrink: 0;
     margin-left: auto;
