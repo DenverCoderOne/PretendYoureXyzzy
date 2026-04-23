@@ -291,10 +291,18 @@
 
     /** Read saved cookie and apply the stored language (or default to English). */
     init: function () {
-      var urlParam = new URLSearchParams(window.location.search).get('lang');
-      var saved    = (typeof $.cookie === 'function') ? $.cookie(COOKIE_KEY) : null;
-      var lang     = urlParam || saved;
-      this.apply(lang === 'he' ? 'he' : 'en');
+      /* Parse ?lang= from the URL (with regex fallback for older browsers) */
+      var urlParam = null;
+      try {
+        urlParam = new URLSearchParams(window.location.search).get('lang');
+      } catch (e) {
+        var m = window.location.search.match(/[?&]lang=([^&]+)/);
+        urlParam = m ? decodeURIComponent(m[1]) : null;
+      }
+      var saved = (typeof $.cookie === 'function') ? $.cookie(COOKIE_KEY) : null;
+      /* URL param wins over cookie; cookie wins over default */
+      var lang = (urlParam === 'he' || urlParam === 'en') ? urlParam : (saved === 'he' ? 'he' : 'en');
+      this.apply(lang);
     },
 
     /** Flip between English and Hebrew. */
